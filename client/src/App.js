@@ -2,14 +2,20 @@ import Nav from "./components/Nav.jsx";
 import HomePage from "./components/HomePage.jsx";
 import ReviewPage from "./components/ReviewPage.jsx";
 
+import { Route } from "react-router-dom";
+
 function App() {
   return (
     <div>
       <Nav />
 
-      <HomePage />
+      <Route path="/" exact>
+        <HomePage />
+      </Route>
 
-      <ReviewPage />
+      <Route path="">
+        <ReviewPage />
+      </Route>
     </div>
   );
 }
