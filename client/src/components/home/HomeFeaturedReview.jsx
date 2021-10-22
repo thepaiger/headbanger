@@ -1,13 +1,17 @@
-import AirtableReview from '../shared/AirtableReview.jsx'
 
-const HomeFeaturedReview = () => {
+const HomeFeaturedReview = ({ reviews }) => {
+  
+  // console.log(reviews)
   return (
     <div>
-      <h5>HomeFeaturedReview</h5>
-
-      <AirtableReview />
+      {/* <p>{reviews[0].fields.bandName}</p> */}
     </div>
   )
 }
 
 export default HomeFeaturedReview;
+
+
+
+{/* <h2>HomeFeaturedReview</h2> */}
+      {/* <h4>{reviewData.fields.bandName}</h4> */}

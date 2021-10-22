@@ -9,13 +9,19 @@ function App() {
     <div>
       <Nav />
 
+      <hr />
+
       <Route path="/" exact>
         <HomePage />
       </Route>
 
-      <Route path="">
+      <hr />
+
+      <Route path="/review">
         <ReviewPage />
       </Route>
+
+      <hr />
     </div>
   );
 }

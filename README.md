@@ -104,14 +104,14 @@
 | Proposal                                      |    H     |     3 HRS      |    4.5 HRS    |
 | Airtable setup                                |    H     |     .5 HR      |               |
 | Airtable data population                      |    H     |     2 HRS      |               |
-| Create component structure (high-level)       |    H     |      1 HR      |    1.5 HRS    |
+| Create component structure (high-level)       |    H     |      1 HR      |     2 HRS     |
 | Navbar component population                   |    H     |     .5 HR      |               |
 | Header/About component population             |    H     |     .5 HR      |               |
 | Create review component - home page large     |    H     |     2 HRS      |               |
 | Create review component - home page small     |    H     |      1 HR      |               |
 | Create review component - separate page       |    H     |     2 HRS      |               |
 | Create review component - separate page add'l |    H     |      1 HR      |               |
-| Link Airtable to review components            |    H     |     2 HRS      |               |
+| Link Airtable to review components            |    H     |     2 HRS      |     1 HR      |
 | Populate data in review components            |    H     |     3 HRS      |               |
 | Create band name header                       |    H     |     .5 HR      |               |
 | Populate band name header w/ Airtable data    |    H     |      1 HR      |               |
