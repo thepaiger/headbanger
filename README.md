@@ -104,7 +104,7 @@
 | Proposal                                      |    H     |     3 HRS      |    4.5 HRS    |
 | Airtable setup                                |    H     |     .5 HR      |               |
 | Airtable data population                      |    H     |     2 HRS      |               |
-| Create component structure (high-level)       |    H     |      1 HR      |               |
+| Create component structure (high-level)       |    H     |      1 HR      |    1.5 HRS    |
 | Navbar component population                   |    H     |     .5 HR      |               |
 | Header/About component population             |    H     |     .5 HR      |               |
 | Create review component - home page large     |    H     |     2 HRS      |               |
@@ -129,7 +129,7 @@
 | CSS - misc                                    |    L     |     3 HRS      |               |
 | Total                                         |    H     |     43 HRS     |               |
 
-## SWOT Analysis:
+## SWOT Analysis
 
 - Strengths:
   - CSS, overall understanding of project goals, strong jumping-off point with wireframes
