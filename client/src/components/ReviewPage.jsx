@@ -1,7 +1,7 @@
-import ReviewHeader from './review/ReviewHeader.jsx'
-// import ReviewVideo from './review/ReviewVideo.jsx'
+import ReviewHeader from './review/ReviewHeader'
+import ReviewVideo from './review/ReviewVideo'
 import ReviewFeaturedReview from './review/ReviewFeaturedReview'
-import ReviewComments from './review/ReviewComments.jsx'
+import ReviewComments from './review/ReviewComments'
 import ReviewAdditionalReview from './review/ReviewAdditionalReview'
 
 import axios from "axios";
@@ -49,6 +49,13 @@ const ReviewPage = () => {
       ))}
 
       {reviews.slice(0,1).map((review) => (
+        <ReviewVideo
+          key={review.id}
+          reviewData={review}
+        />
+      ))}
+
+      {reviews.slice(0,1).map((review) => (
         <ReviewFeaturedReview
         key={review.id}
         reviewData={review}
@@ -69,9 +76,6 @@ const ReviewPage = () => {
         />
       ))}
 
-      {/* <ReviewVideo />
-
-      <ReviewComments /> */}
 
     </div>
   )
