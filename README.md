@@ -129,6 +129,8 @@
 | CSS - misc                                    |    L     |     3 HRS      |               |
 | Total                                         |    H     |     43 HRS     |               |
 
+ATTEMPTED DATA PULL - 2.5 HRS
+
 ## SWOT Analysis
 
 - Strengths:

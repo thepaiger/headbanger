@@ -1,46 +1,78 @@
-// import ReviewHeader from './review/ReviewHeader.jsx'
+import ReviewHeader from './review/ReviewHeader.jsx'
 // import ReviewVideo from './review/ReviewVideo.jsx'
-// import ReviewFeaturedReview from './review/ReviewFeaturedReview.jsx'
-// import ReviewComments from './review/ReviewComments.jsx'
-// import ReviewAdditionalReview from './review/ReviewAdditionalReview.jsx'
+import ReviewFeaturedReview from './review/ReviewFeaturedReview'
+import ReviewComments from './review/ReviewComments.jsx'
+import ReviewAdditionalReview from './review/ReviewAdditionalReview'
 
-// import axios from "axios";
-// import { useEffect, useState } from "react";
+import axios from "axios";
+  import { useEffect, useState } from "react";
 
-// const API_URL =
-//   "https://api.airtable.com/v0/appa27lZe3kGcUjPk/reviews?api_key=keyZ41m4JJPUVavOs";
+const REVIEW_API_URL =
+    "https://api.airtable.com/v0/appa27lZe3kGcUjPk/reviews?api_key=keyZ41m4JJPUVavOs";
+const COMMENTS_API_URL =
+    "https://api.airtable.com/v0/appa27lZe3kGcUjPk/comments?api_key=keyZ41m4JJPUVavOs";
 
 const ReviewPage = () => {
-  // const [reviews, setReviews] = useState([]);
-  // const [toggleFetch, setToggleFetch] = useState(true);
 
-  // useEffect(() => {
-  //   const getReviews = async () => {
-  //     const resp = await axios.get(API_URL);
-  //     console.log(resp.data.records);
-  //     setReviews(resp.data.records);
-  //   };
-  //   getReviews();
-  // }, [toggleFetch]);
+    const [reviews, setReviews] = useState([]);
+    const [comments, setComments] = useState([]);
+    const [toggleFetch, setToggleFetch] = useState(true);
+  
+    useEffect(() => {
+      const getReviews = async () => {
+        const resp = await axios.get(REVIEW_API_URL);
+        console.log(resp.data.records);
+        setReviews(resp.data.records);
+      };
+      getReviews();
+
+
+      const getComments = async () => {
+        const resp = await axios.get(COMMENTS_API_URL);
+        console.log(resp.data.records);
+        setComments(resp.data.records);
+      };
+      getComments();
+
+    }, [toggleFetch]);
 
 
   return (
     <div>
       <h2>ReviewPage</h2>
 
-      {/* <h4>{reviewData.fields.bandName}</h4> */}
+      {reviews.slice(0,1).map((review) => (
+        <ReviewHeader
+          key={review.id}
+          reviewData={review}
+        />
+      ))}
 
-      {/* <ReviewHeader />
+      {reviews.slice(0,1).map((review) => (
+        <ReviewFeaturedReview
+        key={review.id}
+        reviewData={review}
+        />
+      ))}
 
-      <ReviewVideo />
+      {reviews.slice(1).map((review) => (
+        <ReviewAdditionalReview
+          key={review.id}
+          reviewData={review}
+        />
+      ))}
+      
+      {comments.map((comment) => (
+        <ReviewComments
+          key={comment.id}
+          comment={comment}
+        />
+      ))}
 
-      <ReviewFeaturedReview />
+      {/* <ReviewVideo />
 
       <ReviewComments /> */}
 
-      {/* <ReviewAdditionalReview
-        reviewData={reviewData}
-      /> */}
     </div>
   )
 }
