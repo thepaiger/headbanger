@@ -103,6 +103,7 @@
 | --------------------------------------------- | :------: | :------------: | :-----------: |
 | Proposal                                      |    H     |     3 HRS      |    4.5 HRS    |
 | Airtable setup                                |    H     |     .5 HR      |               |
+| Connet Airtable data                          |    H     |     3 HRS      |    4.5 HRS    |
 | Airtable data population                      |    H     |     2 HRS      |               |
 | Create component structure (high-level)       |    H     |      1 HR      |     2 HRS     |
 | Navbar component population                   |    H     |     .5 HR      |               |
@@ -118,7 +119,7 @@
 | Create video component                        |    L     |      1 HR      |               |
 | Link video embed                              |    L     |      1 HR      |               |
 | Create comments component                     |    H     |     2 HRS      |               |
-| Link comments to Airtable - GET & POST        |    H     |     2 HRS      |               |
+| Link comments to Airtable - GET & POST        |    H     |     2 HRS      |     .5 HR     |
 | CSS - review component - home page large      |    H     |     2 HRS      |               |
 | CSS - review component - home page small      |    H     |     2 HRS      |               |
 | CSS - review component - separate page        |    H     |     2 HRS      |               |
@@ -128,8 +129,6 @@
 | CSS - flexbox                                 |    H     |     3 HRS      |               |
 | CSS - misc                                    |    L     |     3 HRS      |               |
 | Total                                         |    H     |     43 HRS     |               |
-
-ATTEMPTED DATA PULL - 2.5 HRS
 
 ## SWOT Analysis
 

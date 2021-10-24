@@ -3,6 +3,8 @@ import ReviewVideo from './review/ReviewVideo'
 import ReviewFeaturedReview from './review/ReviewFeaturedReview'
 import ReviewComments from './review/ReviewComments'
 import ReviewAdditionalReview from './review/ReviewAdditionalReview'
+import CommentForm from './review/CommentForm'
+
 
 import axios from "axios";
   import { useEffect, useState } from "react";
@@ -69,14 +71,18 @@ const ReviewPage = () => {
         />
       ))}
       
+      <CommentForm
+      COMMENTS_API_URL={COMMENTS_API_URL}
+      toggleFetch={toggleFetch}
+      setToggleFetch={setToggleFetch}
+      />
+
       {comments.map((comment) => (
         <ReviewComments
           key={comment.id}
           comment={comment}
         />
       ))}
-
-
     </div>
   )
 }
