@@ -12,7 +12,6 @@ import { useParams, Link } from "react-router-dom";
 const API_URL = "https://api.airtable.com/v0/appa27lZe3kGcUjPk";
 const API_KEY = "/?api_key=keyZ41m4JJPUVavOs";
 const REVIEW_TABLE = "/reviews";
-// const COMMENTS_TABLE = '/comments'
 
 const COMMENTS_API_URL =
   "https://api.airtable.com/v0/appa27lZe3kGcUjPk/comments?api_key=keyZ41m4JJPUVavOs";
@@ -46,15 +45,6 @@ const ReviewPage = () => {
     };
     getComments();
 
-    // const handleReload = () => {
-    //   console.log(id.id)
-    //   console.log(window.location.pathname)
-      
-    //   if (`/review/${id.id}` !== window.location.pathname) {
-    //     setToggleFetch(!toggleFetch)
-    //   }
-    // }
-    // handleReload();
   }, [toggleFetch]);
 
 
@@ -131,29 +121,11 @@ const ReviewPage = () => {
   review.length === 0
     ? (musicVideo = "loading")
     : (musicVideo = review.fields.musicVideo);
-
-  
-  // id is the current featured review ID from useParams
-  // const handleReload = () => {
-  //   console.log(id)
-  //   // console.log(additionalReview.id)
-    
-  //   // if (id !== additionalReview.id) {
-  //   //   setToggleFetch(!toggleFetch)
-  //   // }
-  // }
   
   const handleReload = () => {
     setToggleFetch(!toggleFetch);
     window.scrollTo(0, 0); 
   }
-  
-  // console.log(`/review/${id.id}`)
-    // console.log(window.location.pathname)
-    
-    // if (`/review/${id.id}` !== window.location.pathname) {
-    //   setToggleFetch(!toggleFetch)
-    // }
   
   return (
     <div>
@@ -194,89 +166,3 @@ const ReviewPage = () => {
 
 export default ReviewPage;
 
-{
-  /* <ReviewHeader
-          // key={review.id}
-          reviewData={review}
-        /> */
-}
-
-{
-  /* <div>
-        <h5>ReviewHeader</h5>
-
-        <h3>{reviewData.fields.bandName}</h3>
-        <h4>{reviewData.fields.albumName}</h4>
-      </div> */
-}
-
-{
-  /* <ReviewVideo
-          // key={review.id}
-          reviewData={review}
-        /> */
-}
-
-// <div>
-//   <h5>ReviewVideo</h5>
-
-//   <ReactPlayer url={reviewData.fields.musicVideo} />
-// </div>
-
-{
-  /* <ReviewFeaturedReview
-        // key={review.id}
-        reviewData={review}
-        /> */
-}
-
-// <div>
-//   <h5>ReviewFeaturedReview</h5>
-
-//   <img src={reviewData.fields.albumPicture}></img>
-//   <p>{reviewData.fields.reviewText}</p>
-// </div>
-{
-  /* {reviews.slice(0,1).map((review) => (
-        <ReviewHeader
-          key={review.id}
-          reviewData={review}
-        />
-      ))}
-
-      {reviews.slice(0,1).map((review) => (
-        <ReviewVideo
-          key={review.id}
-          reviewData={review}
-        />
-      ))}
-
-      {reviews.slice(0,1).map((review) => (
-        <ReviewFeaturedReview
-        key={review.id}
-        reviewData={review}
-        />
-      ))} */
-}
-
-{
-  /* {reviews.slice(1).map((review) => (
-        <ReviewAdditionalReview
-          key={review.id}
-          reviewData={review}
-        />
-      ))} */
-}
-
-//   <div>
-//   <h5>ReviewAdditionalReview</h5>
-
-//   <img src={reviewData.fields.albumPicture}></img>
-//   <h3>{reviewData.fields.bandName}</h3>
-//   <h4>{reviewData.fields.albumName}</h4>
-//   <p>
-//     {reviewData.fields.reviewText.substring(0, 200)}
-//     <Link to={`/review/${reviewData.fields.albumName}`}>...Read more</Link>
-//     {/* NEED TO CONNECT READ MORE TO OTHER REVIEWS!! */}
-//   </p>
-// </div>

@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 const HomeFeaturedReview = ({ reviewData }) => {
     return (
     <div>
@@ -7,7 +5,7 @@ const HomeFeaturedReview = ({ reviewData }) => {
       <h3>{reviewData.fields.bandName}</h3>
       <h4>{reviewData.fields.albumName}</h4>
       <p>
-        {reviewData.fields.reviewText.substring(0, 200)}
+        {reviewData.fields.reviewText.substring(0, 200)}...
       </p>
     </div>
   )

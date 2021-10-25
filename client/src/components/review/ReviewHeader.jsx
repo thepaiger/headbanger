@@ -1,5 +1,4 @@
-
-const ReviewHeader = ({bandName, albumName}) => {
+const ReviewHeader = ({ bandName, albumName }) => {
   return (
     <div>
       <h3>{bandName} - {albumName}</h3>
