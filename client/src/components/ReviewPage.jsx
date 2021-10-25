@@ -144,15 +144,16 @@ const ReviewPage = () => {
   // }
   
   const handleReload = () => {
-    // console.log(`/review/${id.id}`)
+    setToggleFetch(!toggleFetch);
+    window.scrollTo(0, 0); 
+  }
+  
+  // console.log(`/review/${id.id}`)
     // console.log(window.location.pathname)
     
     // if (`/review/${id.id}` !== window.location.pathname) {
     //   setToggleFetch(!toggleFetch)
     // }
-    setToggleFetch(!toggleFetch)
-  }
-  
   
   return (
     <div>

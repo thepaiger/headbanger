@@ -22,16 +22,19 @@ const CommentForm = ({COMMENTS_API_URL, toggleFetch, setToggleFetch, reviewId}) 
     };
     await axios.post(COMMENTS_API_URL, newComment);
 
+    setUsername('');
+    setComment('');
+
     setToggleFetch(!toggleFetch);
   }
 
   return (
     <form onSubmit={handlePostRequest}>
       <label htmlFor="username">Username</label>
-      <input id="username" type="text" onChange={(ev) => setUsername(ev.target.value)} />
+      <input id="username" type="text" value={username} onChange={(ev) => setUsername(ev.target.value)} />
 
       <label htmlFor="comment">Comment</label>
-      <textarea id="comment" onChange={(ev) => setComment(ev.target.value)} />
+      <textarea id="comment" value={comment} onChange={(ev) => setComment(ev.target.value)} />
 
       <input type="submit" value="Post Comment" onClick={(ev) => setReferenceId(reviewId)} />
     </form>

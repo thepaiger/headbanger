@@ -131,6 +131,8 @@
 | Total                                         |    H     |     46 HRS     |               |
 
 ADD 2 HRS to additional review selection
+ADD 3 HRS to additional review connection, reload, change reviews
+ADD 2 HRS to comment section - populate correct comments
 
 ## SWOT Analysis
 
