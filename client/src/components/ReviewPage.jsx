@@ -24,26 +24,62 @@ const ReviewPage = () => {
   const [toggleFetch, setToggleFetch] = useState(true);
 
   const id = useParams();
-  console.log(id.id);
 
   useEffect(() => {
     const getReview = async () => {
       const resp = await axios.get(
         `${API_URL}${REVIEW_TABLE}/${id.id}${API_KEY}`
       );
-      console.log(resp.data);
       setReview(resp.data);
     };
     getReview();
 
-    console.log(review);
-
     const getAdditionalReviews = async () => {
       const resp = await axios.get(`${API_URL}${REVIEW_TABLE}${API_KEY}`);
-      console.log(resp.data.records);
       setAdditionalReviews(resp.data.records);
+    };
+    getAdditionalReviews();
 
-      // let tempArr = resp.data.records.filter(e => e.id !== 'ecMOsqkKNY6ORuyB');
+    const getComments = async () => {
+      const resp = await axios.get(COMMENTS_API_URL);
+      setComments(resp.data.records);
+    };
+    getComments();
+  }, [toggleFetch]);
+
+
+  console.log(additionalReviews)
+
+  let additionalReviewsArr = [];
+  if (additionalReviews.length !== 0) {
+    let j = 0;
+    for (let i = 0; i < additionalReviews.length; i++) {
+      if (additionalReviews[i].id === review.id) {
+        // additionalReviewsArr[j] = additionalReviews[i];
+        j++;
+      } else {
+        additionalReviewsArr[j] = additionalReviews[i];
+        j++;
+      }
+    }
+  } else {
+    additionalReviewsArr = [
+      {
+        id: "loading",
+        fields: {
+          bandName: "loading",
+          albumName: "loading",
+          reviewText: "loading",
+          albumPicture: "loading",
+          musicVideo: "loading",
+        },
+        createdTime: "loading",
+      },
+    ];
+  }
+
+
+        // let tempArr = resp.data.records.filter(e => e.id !== 'ecMOsqkKNY6ORuyB');
       // console.log(tempArr)
       // console.log(review)
       // let removeIndex = tempArr.indexOf(review);
@@ -53,52 +89,30 @@ const ReviewPage = () => {
       //   const removeReview = (resp.data.records) => {
 
       // }
+  
+    // let recordID = "";
+    // let reviewID = "";
+    // for (let i = 0; i < additionalReviews.length; i++) {
+    //   // if (resp.data.records[i].id != review.id) {
+    //   recordID = additionalReviews[i].id;
+    //   reviewID = review.id;
+    //   if (recordID != reviewID) {
+    //     console.log("ids dont match");
+    //     additionalReviewsArr.push(additionalReviews[i]);
+    //   }
+    // }
 
-      let additionalReviewsArr = [];
-      let recordID = "";
-      let reviewID = "";
-      for (let i = 0; i < resp.data.records.length; i++) {
-        // if (resp.data.records[i].id != review.id) {
-        recordID = resp.data.records[i].id;
-        reviewID = review.id;
-        if (recordID != reviewID) {
-          console.log("ids dont match");
-          additionalReviewsArr.push(resp.data.records[i]);
-        }
-      }
-      console.log(resp.data.records[1].id);
-      console.log(resp.data.records);
-
-      // setAdditionalReviews(resp.data.records);
-      // setAdditionalReviews(additionalReviewsArr);
-    };
-    getAdditionalReviews();
-
-    const getComments = async () => {
-      const resp = await axios.get(COMMENTS_API_URL);
-      console.log(resp.data.records);
-      setComments(resp.data.records);
-
-      console.log(comments)
-    };
-    getComments();
-  }, [toggleFetch]);
-
+  
+  
   let reviewComments = [];
   if (comments.length !== 0) {
     let j = 0;
     for (let i = 0; i < comments.length; i++) {
       if (comments[i].fields.referenceId === id.id) {
-        console.log(j);
-        console.log(comments[i]);
-        // reviewComments = comments[i].push;
         reviewComments[j] = comments[i];
         j++;
       }
     }
-    // for (let i = 0; i < comments.length; i++) {
-    //   reviewComments = comments[i].push;
-    // }
   } else {
     reviewComments = [
       {
@@ -112,39 +126,6 @@ const ReviewPage = () => {
       },
     ];
   }
-
-  console.log(comments);
-
-  // let reviewComments = [];
-  // if (comments.length !== 0) {
-  //   let j = 0;
-  //   for (let i = 0; i < comments.length; i++) {
-  //     if (comments[i].fields.referenceId === id.id) {
-  //       console.log(j);
-  //       console.log(comments[i]);
-  //       reviewComments[j] = comments[i];
-  //       j++;
-  //     }
-  //   }
-  //   // for (let i = 0; i < comments.length; i++) {
-  //   //   reviewComments = comments[i].push;
-  //   // }
-  // } else {
-  //   reviewComments = [
-  //     {
-  //       id: "loading",
-  //       fields: {
-  //         username: "loading",
-  //         comment: "loading",
-  //         referenceId: "loading"
-  //       },
-  //       createdTime: "loading"
-  //     },
-  //   ];
-  // }
-
-  // console.log(reviewComments);
-  // setComments(reviewComments)
 
   let albumName = "";
   let bandName = "";
@@ -168,11 +149,6 @@ const ReviewPage = () => {
     ? (musicVideo = "loading")
     : (musicVideo = review.fields.musicVideo);
 
-  console.log(review.id);
-  console.log(review);
-
-  console.log(additionalReviews);
-
   return (
     <div>
       <ReviewHeader bandName={bandName} albumName={albumName} />
@@ -184,7 +160,7 @@ const ReviewPage = () => {
         reviewText={reviewText}
       />
 
-      {additionalReviews.map((additionalReview) => (
+      {additionalReviewsArr.map((additionalReview) => (
         <ReviewAdditionalReview
           key={additionalReview.id}
           additionalReview={additionalReview}
