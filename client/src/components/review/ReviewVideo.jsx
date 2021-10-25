@@ -1,14 +1,13 @@
-// import ReactPlayer from 'react-player/youtube'
+import ReactPlayer from 'react-player/youtube'
 
-// const ReviewVideo = ({reviewData}) => {
-//   return (
-//     <div>
-//       <h5>ReviewVideo</h5>
+const ReviewVideo = ({musicVideo}) => {
+  return (
+    <div>
+      <h5>ReviewVideo</h5>
       
-//       <ReactPlayer url={reviewData.fields.musicVideo} />
+      <ReactPlayer url={musicVideo} />
+    </div>
+  )
+}
 
-//     </div>
-//   )
-// }
-
-// export default ReviewVideo;
+export default ReviewVideo;

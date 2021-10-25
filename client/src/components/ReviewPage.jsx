@@ -1,11 +1,9 @@
-// import ReviewHeader from './review/ReviewHeader'
-// import ReviewVideo from './review/ReviewVideo'
-// import ReviewFeaturedReview from './review/ReviewFeaturedReview'
+import ReviewHeader from './review/ReviewHeader'
+import ReviewVideo from './review/ReviewVideo'
+import ReviewFeaturedReview from './review/ReviewFeaturedReview'
 import ReviewComments from './review/ReviewComments'
 // import ReviewAdditionalReview from './review/ReviewAdditionalReview'
 import CommentForm from './review/CommentForm'
-
-import ReactPlayer from 'react-player/youtube'
 
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -16,11 +14,6 @@ const API_KEY = '/?api_key=keyZ41m4JJPUVavOs'
 const REVIEW_TABLE = '/reviews'
 const COMMENTS_TABLE = '/comments'
 
-
-// const REVIEW_API_URL =
-//     "https://api.airtable.com/v0/appa27lZe3kGcUjPk/reviews?api_key=keyZ41m4JJPUVavOs";
-// const REVIEW_API_URL =
-//     "https://api.airtable.com/v0/appa27lZe3kGcUjPk/reviews?api_key=keyZ41m4JJPUVavOs";
 const COMMENTS_API_URL =
     "https://api.airtable.com/v0/appa27lZe3kGcUjPk/comments?api_key=keyZ41m4JJPUVavOs";
 
@@ -54,29 +47,34 @@ const ReviewPage = () => {
   let bandName = "";
   let albumPicture = "";
   let reviewText = "";
-  // if (review.length === 0) {
-  //   albumName = "loading";
-  // } else {
-  //   albumName = review.fields.albumName;
-  // }
+  let musicVideo = "";
 
   review.length === 0 ? albumName = "loading" : albumName = review.fields.albumName
   review.length === 0 ? bandName = "loading" : bandName = review.fields.bandName
   review.length === 0 ? albumPicture = "loading" : albumPicture = review.fields.albumPicture
   review.length === 0 ? reviewText = "loading" : reviewText = review.fields.reviewText
+  review.length === 0 ? musicVideo = "loading" : musicVideo = review.fields.musicVideo
 
-  // albumName = review.fields.albumName;
-  // const albumPicture = review.fields.albumPicture;
-  // const bandName = review.fields.bandName;
-  // const reviewText = review.fields.reviewText;
 
   return (
     <div>
       <h2>ReviewPage</h2>
-      <h3>{albumName} - {bandName}</h3>
-      <img src={albumPicture} />
-      <p>{reviewText}</p>
-        
+
+      <ReviewHeader
+        bandName={bandName}
+        albumName={albumName}
+      />
+      
+      <ReviewVideo
+        musicVideo={musicVideo}
+      />
+
+      <ReviewFeaturedReview
+        albumPicture={albumPicture}
+        reviewText={reviewText}
+      />
+
+      
       
       
       <CommentForm
