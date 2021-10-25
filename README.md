@@ -113,7 +113,7 @@
 | Create review component - separate page       |    H     |     2 HRS      |               |
 | Create review component - separate page add'l |    H     |      1 HR      |               |
 | Link Airtable to review components            |    H     |     2 HRS      |     1 HR      |
-| Populate data in review components            |    H     |     3 HRS      |               |
+| Populate data in review components            |    H     |     3 HRS      |     3 HRS     |
 | Create band name header                       |    H     |     .5 HR      |               |
 | Populate band name header w/ Airtable data    |    H     |      1 HR      |               |
 | Create video component                        |    L     |      1 HR      |               |

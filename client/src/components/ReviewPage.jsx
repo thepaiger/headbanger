@@ -24,25 +24,22 @@ const COMMENTS_TABLE = '/comments'
 const COMMENTS_API_URL =
     "https://api.airtable.com/v0/appa27lZe3kGcUjPk/comments?api_key=keyZ41m4JJPUVavOs";
 
-const ReviewPage = ({reviewData}) => {
-  const [reviews, setReviews] = useState([]);
+const ReviewPage = () => {
+  const [review, setReview] = useState([]);
   const [comments, setComments] = useState([]);
   const [toggleFetch, setToggleFetch] = useState(true);
   
   const id = useParams();
   console.log(id.id)
-  // const review = reviews.find((review) => review.id === id);
   
   useEffect(() => {
-  const getReviews = async () => {
+  const getReview = async () => {
     const resp = await axios.get(`${API_URL}${REVIEW_TABLE}/${id.id}${API_KEY}`);
-    // console.log(resp.data.records);
-    // setReviews(resp.data.records);
     console.log(resp.data);
-    setReviews(resp.data);
+    setReview(resp.data);
   };
-  getReviews();
-
+  getReview();
+    
 
   const getComments = async () => {
     const resp = await axios.get(COMMENTS_API_URL);
@@ -53,14 +50,48 @@ const ReviewPage = ({reviewData}) => {
 
   }, [toggleFetch]);    
 
+  let albumName = "";
+  let bandName = "";
+  let albumPicture = "";
+  let reviewText = "";
+  // if (review.length === 0) {
+  //   albumName = "loading";
+  // } else {
+  //   albumName = review.fields.albumName;
+  // }
+
+  review.length === 0 ? albumName = "loading" : albumName = review.fields.albumName
+  review.length === 0 ? bandName = "loading" : bandName = review.fields.bandName
+  review.length === 0 ? albumPicture = "loading" : albumPicture = review.fields.albumPicture
+  review.length === 0 ? reviewText = "loading" : reviewText = review.fields.reviewText
+
+  // albumName = review.fields.albumName;
+  // const albumPicture = review.fields.albumPicture;
+  // const bandName = review.fields.bandName;
+  // const reviewText = review.fields.reviewText;
 
   return (
     <div>
       <h2>ReviewPage</h2>
-
+      <h3>{albumName} - {bandName}</h3>
+      <img src={albumPicture} />
+      <p>{reviewText}</p>
         
       
       
+      <CommentForm
+        COMMENTS_API_URL={COMMENTS_API_URL}
+        toggleFetch={toggleFetch}
+        setToggleFetch={setToggleFetch}
+      />
+
+      {comments.map((comment) => (
+        <ReviewComments
+          key={comment.id}
+          comment={comment}
+        />
+      ))}
+
     </div>
   )
 }
@@ -142,15 +173,3 @@ export default ReviewPage;
     //   </p>
     // </div>
 
-    //   <CommentForm
-    //   COMMENTS_API_URL={COMMENTS_API_URL}
-    //   toggleFetch={toggleFetch}
-    //   setToggleFetch={setToggleFetch}
-    //   />
-
-      // {comments.map((comment) => (
-      //   <ReviewComments
-      //     key={comment.id}
-      //     comment={comment}
-      //   />
-      // ))}
