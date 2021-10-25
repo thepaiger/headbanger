@@ -103,7 +103,7 @@
 | --------------------------------------------- | :------: | :------------: | :-----------: |
 | Proposal                                      |    H     |     3 HRS      |    4.5 HRS    |
 | Airtable setup                                |    H     |     .5 HR      |               |
-| Connet Airtable data                          |    H     |     3 HRS      |    4.5 HRS    |
+| Connect Airtable data                         |    H     |     3 HRS      |    4.5 HRS    |
 | Airtable data population                      |    H     |     2 HRS      |               |
 | Create component structure (high-level)       |    H     |      1 HR      |     2 HRS     |
 | Navbar component population                   |    H     |     .5 HR      |               |
@@ -128,7 +128,7 @@
 | CSS - comment section                         |    H     |     2 HRS      |               |
 | CSS - flexbox                                 |    H     |     3 HRS      |               |
 | CSS - misc                                    |    L     |     3 HRS      |               |
-| Total                                         |    H     |     43 HRS     |               |
+| Total                                         |    H     |     46 HRS     |               |
 
 ## SWOT Analysis
 

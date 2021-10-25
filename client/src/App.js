@@ -17,10 +17,13 @@ function App() {
 
       <hr />
 
-      <Route path="/review">
+      {/* <Route path="/review">
+        <ReviewPage />
+      </Route> */}
+
+      <Route path="/review/:id">
         <ReviewPage />
       </Route>
-
       <hr />
     </div>
   );

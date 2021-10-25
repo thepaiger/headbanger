@@ -10,8 +10,7 @@ const HomeAdditionalReview = ({reviewData}) => {
       <h4>{reviewData.fields.albumName}</h4>
       <p>
         {reviewData.fields.reviewText.substring(0, 200)}
-        <Link to="/">...Read more</Link>
-        {/* NEED TO CONNECT READ MORE TO OTHER REVIEWS!! */}
+        <Link to={`/review/${reviewData.id}`}>...Read more</Link>
       </p>
     </div>
   )
