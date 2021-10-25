@@ -1,9 +1,10 @@
 import axios from 'axios';
 import { useState } from 'react';
 
-const CommentForm = ({COMMENTS_API_URL, toggleFetch, setToggleFetch}) => {
+const CommentForm = ({COMMENTS_API_URL, toggleFetch, setToggleFetch, reviewId}) => {
   const [username, setUsername] = useState('');
   const [comment, setComment] = useState('');
+  const [referenceId, setReferenceId] = useState('');
 
   const handlePostRequest = async (ev) => {
     ev.preventDefault();
@@ -13,12 +14,12 @@ const CommentForm = ({COMMENTS_API_URL, toggleFetch, setToggleFetch}) => {
         {
           fields: {
             username,
-            comment
+            comment,
+            referenceId
           }
         }
       ]
     };
-
     await axios.post(COMMENTS_API_URL, newComment);
 
     setToggleFetch(!toggleFetch);
@@ -26,13 +27,13 @@ const CommentForm = ({COMMENTS_API_URL, toggleFetch, setToggleFetch}) => {
 
   return (
     <form onSubmit={handlePostRequest}>
-      <label htmlForm="username">Username</label>
+      <label htmlFor="username">Username</label>
       <input id="username" type="text" onChange={(ev) => setUsername(ev.target.value)} />
 
       <label htmlFor="comment">Comment</label>
       <textarea id="comment" onChange={(ev) => setComment(ev.target.value)} />
 
-      <input type="submit" value="Post Comment" />
+      <input type="submit" value="Post Comment" onClick={(ev) => setReferenceId(reviewId)} />
     </form>
   )
 }

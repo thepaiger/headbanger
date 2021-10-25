@@ -5,7 +5,7 @@ const ReviewComments = ({comment}) => {
       <h5>ReviewComments</h5>
       
       <em>{comment.fields.username}</em>
-      <p>{comment.fields.username}</p>
+      <p>{comment.fields.comment}</p>
     </div>
   )
 }

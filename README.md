@@ -130,6 +130,8 @@
 | CSS - misc                                    |    L     |     3 HRS      |               |
 | Total                                         |    H     |     46 HRS     |               |
 
+ADD 2 HRS to additional review selection
+
 ## SWOT Analysis
 
 - Strengths:

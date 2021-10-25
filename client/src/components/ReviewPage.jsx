@@ -2,23 +2,24 @@ import ReviewHeader from './review/ReviewHeader'
 import ReviewVideo from './review/ReviewVideo'
 import ReviewFeaturedReview from './review/ReviewFeaturedReview'
 import ReviewComments from './review/ReviewComments'
-// import ReviewAdditionalReview from './review/ReviewAdditionalReview'
+import ReviewAdditionalReview from './review/ReviewAdditionalReview'
 import CommentForm from './review/CommentForm'
 
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams, Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 const API_URL = 'https://api.airtable.com/v0/appa27lZe3kGcUjPk';
 const API_KEY = '/?api_key=keyZ41m4JJPUVavOs'
 const REVIEW_TABLE = '/reviews'
-const COMMENTS_TABLE = '/comments'
+// const COMMENTS_TABLE = '/comments'
 
 const COMMENTS_API_URL =
     "https://api.airtable.com/v0/appa27lZe3kGcUjPk/comments?api_key=keyZ41m4JJPUVavOs";
 
 const ReviewPage = () => {
   const [review, setReview] = useState([]);
+  const [additionalReviews, setAdditionalReviews] = useState([]);
   const [comments, setComments] = useState([]);
   const [toggleFetch, setToggleFetch] = useState(true);
   
@@ -33,7 +34,47 @@ const ReviewPage = () => {
   };
   getReview();
     
+  console.log(review)
+    
+  const getAdditionalReviews = async () => {
+    const resp = await axios.get(`${API_URL}${REVIEW_TABLE}${API_KEY}`);
+    console.log(resp.data.records);
 
+    // let tempArr = resp.data.records.filter(e => e.id !== 'ecMOsqkKNY6ORuyB');
+    // console.log(tempArr)
+    // console.log(review)
+    // let removeIndex = tempArr.indexOf(review);
+    // console.log(-removeIndex)
+    // tempArr.splice(removeIndex, 1);
+
+    //   const removeReview = (resp.data.records) => {
+  
+    // }
+
+    let additionalReviewsArr = [];
+    let recordID = '';
+    let reviewID = '';
+    for (let i = 0; i < resp.data.records.length; i++) {
+      // if (resp.data.records[i].id != review.id) {
+      recordID = resp.data.records[i].id;
+      reviewID = review.id;
+      if (recordID != reviewID) {
+        console.log('ids dont match')
+        additionalReviewsArr.push(resp.data.records[i])
+      }
+    }
+    console.log(resp.data.records[1].id)
+    console.log(resp.data.records)
+
+    // setAdditionalReviews(resp.data.records);
+    setAdditionalReviews(additionalReviewsArr);
+
+    
+  };
+  getAdditionalReviews();
+
+    
+    
   const getComments = async () => {
     const resp = await axios.get(COMMENTS_API_URL);
     console.log(resp.data.records);
@@ -55,11 +96,13 @@ const ReviewPage = () => {
   review.length === 0 ? reviewText = "loading" : reviewText = review.fields.reviewText
   review.length === 0 ? musicVideo = "loading" : musicVideo = review.fields.musicVideo
 
+  console.log(review.id)
+  console.log(review)
+  
+  console.log(additionalReviews)
 
   return (
     <div>
-      <h2>ReviewPage</h2>
-
       <ReviewHeader
         bandName={bandName}
         albumName={albumName}
@@ -74,13 +117,19 @@ const ReviewPage = () => {
         reviewText={reviewText}
       />
 
-      
+      {additionalReviews.map((additionalReview) => (
+        <ReviewAdditionalReview
+          key={additionalReview.id}
+          additionalReview={additionalReview}
+        />
+      ))}
       
       
       <CommentForm
         COMMENTS_API_URL={COMMENTS_API_URL}
         toggleFetch={toggleFetch}
         setToggleFetch={setToggleFetch}
+        reviewId={id.id}
       />
 
       {comments.map((comment) => (
