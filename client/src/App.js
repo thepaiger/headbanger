@@ -17,10 +17,6 @@ function App() {
 
       <hr />
 
-      {/* <Route path="/review">
-        <ReviewPage />
-      </Route> */}
-
       <Route path="/review/:id">
         <ReviewPage />
       </Route>

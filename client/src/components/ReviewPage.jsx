@@ -7,7 +7,7 @@ import CommentForm from "./review/CommentForm";
 
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 const API_URL = "https://api.airtable.com/v0/appa27lZe3kGcUjPk";
 const API_KEY = "/?api_key=keyZ41m4JJPUVavOs";
@@ -45,6 +45,16 @@ const ReviewPage = () => {
       setComments(resp.data.records);
     };
     getComments();
+
+    // const handleReload = () => {
+    //   console.log(id.id)
+    //   console.log(window.location.pathname)
+      
+    //   if (`/review/${id.id}` !== window.location.pathname) {
+    //     setToggleFetch(!toggleFetch)
+    //   }
+    // }
+    // handleReload();
   }, [toggleFetch]);
 
 
@@ -55,7 +65,6 @@ const ReviewPage = () => {
     let j = 0;
     for (let i = 0; i < additionalReviews.length; i++) {
       if (additionalReviews[i].id === review.id) {
-        // additionalReviewsArr[j] = additionalReviews[i];
         j++;
       } else {
         additionalReviewsArr[j] = additionalReviews[i];
@@ -78,32 +87,6 @@ const ReviewPage = () => {
     ];
   }
 
-
-        // let tempArr = resp.data.records.filter(e => e.id !== 'ecMOsqkKNY6ORuyB');
-      // console.log(tempArr)
-      // console.log(review)
-      // let removeIndex = tempArr.indexOf(review);
-      // console.log(-removeIndex)
-      // tempArr.splice(removeIndex, 1);
-
-      //   const removeReview = (resp.data.records) => {
-
-      // }
-  
-    // let recordID = "";
-    // let reviewID = "";
-    // for (let i = 0; i < additionalReviews.length; i++) {
-    //   // if (resp.data.records[i].id != review.id) {
-    //   recordID = additionalReviews[i].id;
-    //   reviewID = review.id;
-    //   if (recordID != reviewID) {
-    //     console.log("ids dont match");
-    //     additionalReviewsArr.push(additionalReviews[i]);
-    //   }
-    // }
-
-  
-  
   let reviewComments = [];
   if (comments.length !== 0) {
     let j = 0;
@@ -149,6 +132,28 @@ const ReviewPage = () => {
     ? (musicVideo = "loading")
     : (musicVideo = review.fields.musicVideo);
 
+  
+  // id is the current featured review ID from useParams
+  // const handleReload = () => {
+  //   console.log(id)
+  //   // console.log(additionalReview.id)
+    
+  //   // if (id !== additionalReview.id) {
+  //   //   setToggleFetch(!toggleFetch)
+  //   // }
+  // }
+  
+  const handleReload = () => {
+    // console.log(`/review/${id.id}`)
+    // console.log(window.location.pathname)
+    
+    // if (`/review/${id.id}` !== window.location.pathname) {
+    //   setToggleFetch(!toggleFetch)
+    // }
+    setToggleFetch(!toggleFetch)
+  }
+  
+  
   return (
     <div>
       <ReviewHeader bandName={bandName} albumName={albumName} />
@@ -161,10 +166,15 @@ const ReviewPage = () => {
       />
 
       {additionalReviewsArr.map((additionalReview) => (
-        <ReviewAdditionalReview
-          key={additionalReview.id}
-          additionalReview={additionalReview}
-        />
+        <Link to={`/review/${additionalReview.id}`} onClick={handleReload}>
+          <ReviewAdditionalReview
+            key={additionalReview.id}
+            additionalReview={additionalReview}
+            toggleFetch={toggleFetch}
+            setToggleFetch={setToggleFetch}
+            id={id}
+          />
+          </Link>
       ))}
 
       <CommentForm

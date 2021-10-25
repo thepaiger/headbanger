@@ -6,7 +6,7 @@ import HomeAdditionalReview from './home/HomeAdditionalReview'
 
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const REVIEW_API_URL =
   "https://api.airtable.com/v0/appa27lZe3kGcUjPk/reviews?api_key=keyZ41m4JJPUVavOs";

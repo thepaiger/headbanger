@@ -1,17 +1,24 @@
-import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
-const ReviewAdditionalReview = ({additionalReview}) => {
+const ReviewAdditionalReview = ({ additionalReview, toggleFetch, setToggleFetch, id }) => {
+  // useEffect(() => {
+  // }, [toggleFetch]);
+
+  // if (id !== additionalReview.id) {
+  //   toggleFetch
+  // }
+
+  // id is the current featured review ID from useParams
+  // console.log(id.id)
+  // console.log(additionalReview.id)
+
   return (
     <div>
-      <h5>ReviewAdditionalReview</h5>
-
       <img src={additionalReview.fields.albumPicture}></img>
       <h3>{additionalReview.fields.bandName}</h3>
       <h4>{additionalReview.fields.albumName}</h4>
       <p>
         {additionalReview.fields.reviewText.substring(0, 200)}
-        <Link to="/">...Read more</Link>
-        {/* NEED TO CONNECT READ MORE TO OTHER REVIEWS!! */}
       </p>
     </div>
   )
