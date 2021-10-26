@@ -4,11 +4,12 @@
 
 // import { Route } from "react-router-dom";
 
-// import "./App.css";
+import "./App.css";
 
 function App() {
   return (
     <div>
+      testing for netlify
       {/* <Nav />
 
       <Route path="/" exact>

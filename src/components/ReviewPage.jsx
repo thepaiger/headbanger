@@ -10,11 +10,11 @@
 // import { useParams, Link } from "react-router-dom";
 
 // const API_URL = "https://api.airtable.com/v0/appa27lZe3kGcUjPk";
-// const API_KEY = "/?api_key=keyZ41m4JJPUVavOs";
+// const API_KEY = `/?api_key=${process.env.REACT_APP_API_KEY}`;
 // const REVIEW_TABLE = "/reviews";
 
 // const COMMENTS_API_URL =
-//   "https://api.airtable.com/v0/appa27lZe3kGcUjPk/comments?api_key=keyZ41m4JJPUVavOs";
+//   `https://api.airtable.com/v0/appa27lZe3kGcUjPk/comments?api_key=${process.env.REACT_APP_API_KEY}`;
 
 // const ReviewPage = () => {
 //   const [review, setReview] = useState([]);
