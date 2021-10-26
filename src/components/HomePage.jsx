@@ -6,6 +6,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 
+import './HomePage.css'
 
 const REVIEW_API_URL =
   "https://api.airtable.com/v0/appa27lZe3kGcUjPk/reviews?api_key=keyZ41m4JJPUVavOs";
@@ -23,11 +24,11 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div>
+    <div className="home-page-div">
       <HomeHeader />
       
         {reviews.slice(0, 2).map((review) => (
-          <Link to={`/review/${review.id}`}>
+          <Link className="link" to={`/review/${review.id}`}> 
             <HomeFeaturedReview
               key={review.id}
               reviewData={review}
@@ -36,7 +37,7 @@ const HomePage = () => {
         ))}
       
       {reviews.slice(2).map((review) => (
-        <Link to={`/review/${review.id}`}>
+        <Link className="link" to={`/review/${review.id}`}>
           <HomeAdditionalReview
             key={review.id}
             reviewData={review}

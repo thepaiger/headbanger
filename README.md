@@ -115,13 +115,13 @@
 | Populate band name header w/ Airtable data   |    H     |      1 HR      |               |
 | Create video component                       |    L     |      1 HR      |               |
 | Link video embed                             |    L     |      1 HR      |               |
-| Create comments component                    |    H     |     2 HRS      |    5. HRS     |
+| Create comments component                    |    H     |     2 HRS      |    .5 HRS     |
 | Link comments to Airtable - GET & POST       |    H     |     2 HRS      |    2.5 HR     |
-| CSS - review component - home page large     |    H     |     2 HRS      |               |
+| CSS - review component - home page large     |    H     |     2 HRS      |     1 HR      |
 | CSS - review component - home page small     |    H     |     2 HRS      |               |
 | CSS - review component - separate page       |    H     |     2 HRS      |               |
 | CSS - review component - separate page add'l |    H     |     2 HRS      |               |
-| CSS - headers/nav                            |    H     |      1 HR      |               |
+| CSS - headers/nav                            |    H     |      1 HR      |     1 HR      |
 | CSS - comment section                        |    H     |     2 HRS      |               |
 | CSS - flexbox                                |    H     |     3 HRS      |               |
 | CSS - misc                                   |    L     |     3 HRS      |               |
