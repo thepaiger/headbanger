@@ -9,15 +9,13 @@ import "./App.css";
 function App() {
   return (
     <div>
-      <Nav />
+      {/* <Nav /> */}
 
       <Route path="/" exact>
-        <HomePage />
+        {/* <HomePage /> */}
       </Route>
 
-      <Route path="/review/:id">
-        <ReviewPage />
-      </Route>
+      <Route path="/review/:id">{/* <ReviewPage /> */}</Route>
     </div>
   );
 }

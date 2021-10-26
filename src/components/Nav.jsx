@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
-const Nav = () => {
-  return (
-    <nav>
-      <Link className='nav-link' to="/">HEADBANGER</Link>
-    </nav>
-  )
-}
+// const Nav = () => {
+//   return (
+//     <nav>
+//       <Link className='nav-link' to="/">HEADBANGER</Link>
+//     </nav>
+//   )
+// }
 
-export default Nav;
+// export default Nav;
