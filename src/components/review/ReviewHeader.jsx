@@ -1,9 +1,9 @@
-const ReviewHeader = ({ bandName, albumName }) => {
-  return (
-    <div>
-      <h3>{bandName} - {albumName}</h3>
-    </div>
-  )
-}
+// const ReviewHeader = ({ bandName, albumName }) => {
+//   return (
+//     <div>
+//       <h3>{bandName} - {albumName}</h3>
+//     </div>
+//   )
+// }
 
-export default ReviewHeader;
+// export default ReviewHeader;

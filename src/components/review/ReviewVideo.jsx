@@ -1,11 +1,11 @@
-import ReactPlayer from 'react-player/youtube'
+// import ReactPlayer from 'react-player/youtube'
 
-const ReviewVideo = ({musicVideo}) => {
-  return (
-    <div>
-      <ReactPlayer url={musicVideo} />
-    </div>
-  )
-}
+// const ReviewVideo = ({musicVideo}) => {
+//   return (
+//     <div>
+//       <ReactPlayer url={musicVideo} />
+//     </div>
+//   )
+// }
 
-export default ReviewVideo;
+// export default ReviewVideo;

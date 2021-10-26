@@ -1,21 +1,23 @@
-import Nav from "./components/Nav.jsx";
-import HomePage from "./components/HomePage.jsx";
-import ReviewPage from "./components/ReviewPage.jsx";
+// import Nav from "./components/Nav.jsx";
+// import HomePage from "./components/HomePage.jsx";
+// import ReviewPage from "./components/ReviewPage.jsx";
 
-import { Route } from "react-router-dom";
+// import { Route } from "react-router-dom";
 
-import "./App.css";
+// import "./App.css";
 
 function App() {
   return (
     <div>
-      {/* <Nav /> */}
+      {/* <Nav />
 
       <Route path="/" exact>
-        {/* <HomePage /> */}
+        <HomePage />
       </Route>
 
-      <Route path="/review/:id">{/* <ReviewPage /> */}</Route>
+      <Route path="/review/:id">
+        <ReviewPage />
+      </Route> */}
     </div>
   );
 }
