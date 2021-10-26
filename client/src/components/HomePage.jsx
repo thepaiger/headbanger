@@ -6,6 +6,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 
+
 const REVIEW_API_URL =
   "https://api.airtable.com/v0/appa27lZe3kGcUjPk/reviews?api_key=keyZ41m4JJPUVavOs";
 
@@ -23,11 +24,8 @@ const HomePage = () => {
 
   return (
     <div>
-      <h2>HomePage</h2>
-
       <HomeHeader />
       
-      <h5>HomeFeaturedReview</h5>  
         {reviews.slice(0, 2).map((review) => (
           <Link to={`/review/${review.id}`}>
             <HomeFeaturedReview
@@ -36,10 +34,6 @@ const HomePage = () => {
             />
           </Link>
         ))}
-    
-      <hr />
-
-      <h5>HomeAdditionalReview</h5>
       
       {reviews.slice(2).map((review) => (
         <Link to={`/review/${review.id}`}>
@@ -49,7 +43,6 @@ const HomePage = () => {
           />
         </Link>
       ))}
-
     </div>
   )
 }

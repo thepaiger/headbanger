@@ -1,7 +1,7 @@
 const HomeHeader = () => {
   return (
     <div>
-      <h5>HomeHeader</h5>
+      <h5>Welcome to HEADBANGER - your home for punk and metal reviews</h5>
     </div>
   )
 }

@@ -4,23 +4,20 @@ import ReviewPage from "./components/ReviewPage.jsx";
 
 import { Route } from "react-router-dom";
 
+import "./App.css";
+
 function App() {
   return (
     <div>
       <Nav />
 
-      <hr />
-
       <Route path="/" exact>
         <HomePage />
       </Route>
 
-      <hr />
-
       <Route path="/review/:id">
         <ReviewPage />
       </Route>
-      <hr />
     </div>
   );
 }
