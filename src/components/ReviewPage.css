@@ -1,6 +1,6 @@
 /* 
 SOURCES
-For .react-player sizing: https://stackoverflow.com/questions/55909610/css-how-to-use-vw-and-vh-to-make-div-in-16-9-ratio
+For .react-player sizing: https://www.youtube.com/watch?v=Rq5SEhs9lws
 */
 
 .card {
@@ -21,28 +21,16 @@ For .react-player sizing: https://stackoverflow.com/questions/55909610/css-how-t
 }
 
 .video-div {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   position: relative;
-  /* padding-top: 56.25%; */
-  /* width: 70vw;
-  height: 39.375vh; */
-  /* width: 70vw;
-  height: auto; */
-  width: 560px;
-  height: 315px;
+  padding-top: 56.25%;
+  width: 70vw;
+  height: auto;
 }
 
 .react-player {
-  /* position: absolute;
+  position: absolute;
   top: 0;
-  left: 0; */
-  /* width: 70vw;
-  height: fit-content; */
-  /* width: 100%;
-  height: 100%; */
+  left: 0;
 }
 
 /* .video-div {
