@@ -1,9 +1,10 @@
 const ReviewHeader = ({ bandName, albumName }) => {
   return (
-    <div>
-      <h3>{bandName} - {albumName}</h3>
+    <div className="review-header-div card">
+      <h3 className="band-name">{bandName}</h3>
+      <h4 className="album-name">{albumName}</h4>
     </div>
-  )
-}
+  );
+};
 
 export default ReviewHeader;

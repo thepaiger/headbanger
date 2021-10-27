@@ -20,6 +20,32 @@ For .react-player sizing: https://www.youtube.com/watch?v=Rq5SEhs9lws
   text-decoration: none;
 }
 
+/* ==================HEADER================== */
+
+.review-header-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: #323031;
+  width: 70vw;
+  height: auto;
+  margin: 5vh 0;
+}
+
+.review-header-div .band-name {
+  font-size: 30px;
+  font-weight: 800;
+  margin: 5vh 0 2vh 0;
+}
+
+.review-header-div .album-name {
+  font-size: 25px;
+  font-weight: 600;
+  font-style: italic;
+  margin: 0 0 5vh 0;
+}
+
 /* ==================VIDEO================== */
 
 .video-div {
@@ -53,8 +79,6 @@ For .react-player sizing: https://www.youtube.com/watch?v=Rq5SEhs9lws
 /* ==================FEATURED REVIEW================== */
 
 .review-featured-review-div {
-  /* display: flex;
-  flex-wrap: wrap; */
   margin: 5vh 0 0 0;
   box-sizing: border-box;
   background-color: #323031;
@@ -80,6 +104,7 @@ For .react-player sizing: https://www.youtube.com/watch?v=Rq5SEhs9lws
 
 .review-text {
   margin: 0 0 15px 0;
+  line-height: 1.3;
 }
 
 /* ==================ADDITIONAL REVIEWS================== */
@@ -141,8 +166,47 @@ For .react-player sizing: https://www.youtube.com/watch?v=Rq5SEhs9lws
 /* ==================COMMENT FORM================== */
 
 .commentForm {
+  display: flex;
+  flex-direction: column;
   box-sizing: border-box;
-  border: solid white 1px;
+  /* border: solid white 1px; */
   border-radius: 7px;
-  background-color: #7f7979;
+  background-color: #323031;
+  margin: 5vh 0 0 0;
+  padding: 10px;
+  width: 70vw;
+  height: auto;
+}
+
+.formHeader {
+  margin: 0 0 10px 0;
+}
+
+.usernameLabel,
+.commentLabel {
+  margin: 5px 0;
+  font-weight: 500;
+}
+
+.usernameInput,
+.commentInput {
+  line-height: 1.3;
+  font-family: "Inconsolata", monospace;
+  font-size: 15px;
+  border-radius: 4px;
+}
+
+.usernameInput::placeholder,
+.commentInput::placeholder {
+  font-family: "Inconsolata", monospace;
+  font-size: 15px;
+}
+
+.commentSubmit {
+  margin: 10px 0 0 0;
+  font-family: "Inconsolata", monospace;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #000;
+  color: white;
 }

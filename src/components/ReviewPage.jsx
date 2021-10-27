@@ -6,7 +6,7 @@ import ReviewAdditionalReview from "./review/ReviewAdditionalReview";
 import CommentForm from "./review/CommentForm";
 
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useParams, Link } from "react-router-dom";
 
 import "./ReviewPage.css";
@@ -22,17 +22,25 @@ const ReviewPage = () => {
   const [additionalReviews, setAdditionalReviews] = useState([]);
   const [comments, setComments] = useState([]);
   const [toggleFetch, setToggleFetch] = useState(true);
+  const hasFetchedReview = useRef(false);
+
+  const toggleFetchedRef = () => {
+    hasFetchedReview.current = !hasFetchedReview.current;
+  };
 
   const id = useParams();
 
   useEffect(() => {
-    const getReview = async () => {
-      const resp = await axios.get(
-        `${API_URL}${REVIEW_TABLE}/${id.id}${API_KEY}`
-      );
-      setReview(resp.data);
-    };
-    getReview();
+    if (!hasFetchedReview.current) {
+      const getReview = async () => {
+        const resp = await axios.get(
+          `${API_URL}${REVIEW_TABLE}/${id.id}${API_KEY}`
+        );
+        setReview(resp.data);
+        toggleFetchedRef();
+      };
+      getReview();
+    }
 
     const getAdditionalReviews = async () => {
       const resp = await axios.get(`${API_URL}${REVIEW_TABLE}${API_KEY}`);

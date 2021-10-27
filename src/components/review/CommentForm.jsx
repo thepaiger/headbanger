@@ -34,11 +34,14 @@ const CommentForm = ({
   };
 
   return (
-    <form className="commentForm" onSubmit={handlePostRequest}>
-      <h3>Leave a comment:</h3>
+    <form className="commentForm card" onSubmit={handlePostRequest}>
+      <h3 className="formHeader">Leave a comment:</h3>
 
-      <label htmlFor="username">Username</label>
+      <label className="usernameLabel" htmlFor="username">
+        Username
+      </label>
       <input
+        className="usernameInput"
         id="username"
         type="text"
         value={username}
@@ -48,8 +51,11 @@ const CommentForm = ({
         required
       />
 
-      <label htmlFor="comment">Comment</label>
+      <label className="commentLabel" htmlFor="comment">
+        Comment
+      </label>
       <textarea
+        className="commentInput"
         id="comment"
         value={comment}
         placeholder="Leave comment here..."
@@ -60,6 +66,7 @@ const CommentForm = ({
       />
 
       <input
+        className="commentSubmit"
         type="submit"
         value="Post Comment"
         onClick={(ev) => setReferenceId(reviewId)}
