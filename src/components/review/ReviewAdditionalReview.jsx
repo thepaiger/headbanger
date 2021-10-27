@@ -1,10 +1,22 @@
 const ReviewAdditionalReview = ({ additionalReview }) => {
   return (
-    <div>
-      <img src={additionalReview.fields.albumPicture} alt="album artwork" />
-      <h3>{additionalReview.fields.bandName}</h3>
-      <h4>{additionalReview.fields.albumName}</h4>
-      <p>{additionalReview.fields.reviewText.substring(0, 200)}...</p>
+    <div className="home-additional-review-div card">
+      <div className="album-title-div">
+        <div className="album-picture-div">
+          <img
+            className="album-picture"
+            src={additionalReview.fields.albumPicture}
+            alt="album artwork"
+          />
+        </div>
+        <div className="title-div">
+          <h3 className="band-name">{additionalReview.fields.bandName}</h3>
+          <h4 className="album-name">{additionalReview.fields.albumName}</h4>
+        </div>
+      </div>
+      <p className="review-text">
+        {additionalReview.fields.reviewText.substring(0, 200)}...
+      </p>
     </div>
   );
 };

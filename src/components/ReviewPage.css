@@ -56,6 +56,10 @@ For .react-player sizing: https://www.youtube.com/watch?v=Rq5SEhs9lws
   /* display: flex;
   flex-wrap: wrap; */
   margin: 5vh 0;
+  box-sizing: border-box;
+  background-color: #323031;
+  border-radius: 7px;
+  padding: 15px;
 }
 
 /* ==================ALBUM ARTWORK================== */
