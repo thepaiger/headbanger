@@ -13,8 +13,7 @@ const API_URL = "https://api.airtable.com/v0/appa27lZe3kGcUjPk";
 const API_KEY = `/?api_key=${process.env.REACT_APP_API_KEY}`;
 const REVIEW_TABLE = "/reviews";
 
-const COMMENTS_API_URL =
-  `https://api.airtable.com/v0/appa27lZe3kGcUjPk/comments?api_key=${process.env.REACT_APP_API_KEY}`;
+const COMMENTS_API_URL = `https://api.airtable.com/v0/appa27lZe3kGcUjPk/comments?api_key=${process.env.REACT_APP_API_KEY}`;
 
 const ReviewPage = () => {
   const [review, setReview] = useState([]);
@@ -44,11 +43,9 @@ const ReviewPage = () => {
       setComments(resp.data.records);
     };
     getComments();
-
   }, [toggleFetch]);
 
-
-  console.log(additionalReviews)
+  console.log(additionalReviews);
 
   let additionalReviewsArr = [];
   if (additionalReviews.length !== 0) {
@@ -121,12 +118,12 @@ const ReviewPage = () => {
   review.length === 0
     ? (musicVideo = "loading")
     : (musicVideo = review.fields.musicVideo);
-  
+
   const handleReload = () => {
     setToggleFetch(!toggleFetch);
-    window.scrollTo(0, 0); 
-  }
-  
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div>
       <ReviewHeader bandName={bandName} albumName={albumName} />
@@ -147,7 +144,7 @@ const ReviewPage = () => {
             setToggleFetch={setToggleFetch}
             id={id}
           />
-          </Link>
+        </Link>
       ))}
 
       <CommentForm
@@ -165,4 +162,3 @@ const ReviewPage = () => {
 };
 
 export default ReviewPage;
-

@@ -1,10 +1,10 @@
-const ReviewFeaturedReview = ({albumPicture, reviewText}) => {
+const ReviewFeaturedReview = ({ albumPicture, reviewText }) => {
   return (
     <div>
-      <img src={albumPicture}></img>
+      <img src={albumPicture} alt="album artwork" />
       <p>{reviewText}</p>
     </div>
-  )
-}
+  );
+};
 
 export default ReviewFeaturedReview;

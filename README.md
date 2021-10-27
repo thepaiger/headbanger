@@ -123,7 +123,7 @@
 | CSS - review component - separate page add'l |    H     |     2 HRS      |               |
 | CSS - headers/nav                            |    H     |      1 HR      |     1 HR      |
 | CSS - comment section                        |    H     |     2 HRS      |               |
-| CSS - flexbox                                |    H     |     3 HRS      |               |
+| CSS - flexbox                                |    H     |     3 HRS      |     2 HRS     |
 | CSS - misc                                   |    L     |     3 HRS      |               |
 | Total                                        |    H     |     46 HRS     |               |
 
