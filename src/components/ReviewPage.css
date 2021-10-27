@@ -20,6 +20,8 @@ For .react-player sizing: https://www.youtube.com/watch?v=Rq5SEhs9lws
   text-decoration: none;
 }
 
+/* ==================VIDEO================== */
+
 .video-div {
   position: relative;
   padding-top: 56.25%;
@@ -47,3 +49,31 @@ For .react-player sizing: https://www.youtube.com/watch?v=Rq5SEhs9lws
   width: 100%;
   position: absolute;
 } */
+
+/* ==================FEATURED REVIEW================== */
+
+.review-featured-review-div {
+  /* display: flex;
+  flex-wrap: wrap; */
+  margin: 5vh 0;
+}
+
+/* ==================ALBUM ARTWORK================== */
+
+.review-featured-review-div .album-picture-div {
+  width: 30vw;
+  height: auto;
+  float: left;
+  margin: 0 15px 0 0;
+}
+
+.review-featured-review-div .album-picture {
+  width: 100%;
+  height: 100%;
+}
+
+/* ==================REVIEW TEXT================== */
+
+.review-text {
+  margin: 0 0 15px 0;
+}
