@@ -1,6 +1,6 @@
 const ReviewAdditionalReview = ({ additionalReview }) => {
   return (
-    <div className="home-additional-review-div card">
+    <div className="review-additional-review-div card">
       <div className="album-title-div">
         <div className="album-picture-div">
           <img

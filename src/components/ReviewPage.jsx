@@ -47,8 +47,6 @@ const ReviewPage = () => {
     getComments();
   }, [toggleFetch]);
 
-  console.log(additionalReviews);
-
   let additionalReviewsArr = [];
   if (additionalReviews.length !== 0) {
     let j = 0;
@@ -142,6 +140,7 @@ const ReviewPage = () => {
           className="link"
           to={`/review/${additionalReview.id}`}
           onClick={handleReload}
+          key={additionalReview.id}
         >
           <ReviewAdditionalReview
             key={additionalReview.id}

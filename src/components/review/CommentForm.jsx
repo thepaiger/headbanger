@@ -1,10 +1,15 @@
-import axios from 'axios';
-import { useState } from 'react';
+import axios from "axios";
+import { useState } from "react";
 
-const CommentForm = ({COMMENTS_API_URL, toggleFetch, setToggleFetch, reviewId}) => {
-  const [username, setUsername] = useState('');
-  const [comment, setComment] = useState('');
-  const [referenceId, setReferenceId] = useState('');
+const CommentForm = ({
+  COMMENTS_API_URL,
+  toggleFetch,
+  setToggleFetch,
+  reviewId,
+}) => {
+  const [username, setUsername] = useState("");
+  const [comment, setComment] = useState("");
+  const [referenceId, setReferenceId] = useState("");
 
   const handlePostRequest = async (ev) => {
     ev.preventDefault();
@@ -15,30 +20,52 @@ const CommentForm = ({COMMENTS_API_URL, toggleFetch, setToggleFetch, reviewId}) 
           fields: {
             username,
             comment,
-            referenceId
-          }
-        }
-      ]
+            referenceId,
+          },
+        },
+      ],
     };
     await axios.post(COMMENTS_API_URL, newComment);
 
-    setUsername('');
-    setComment('');
+    setUsername("");
+    setComment("");
 
     setToggleFetch(!toggleFetch);
-  }
+  };
 
   return (
-    <form onSubmit={handlePostRequest}>
+    <form className="commentForm" onSubmit={handlePostRequest}>
+      <h3>Leave a comment:</h3>
+
       <label htmlFor="username">Username</label>
-      <input id="username" type="text" value={username} onChange={(ev) => setUsername(ev.target.value)} />
+      <input
+        id="username"
+        type="text"
+        value={username}
+        placeholder="Enter a username"
+        name="username"
+        onChange={(ev) => setUsername(ev.target.value)}
+        required
+      />
 
       <label htmlFor="comment">Comment</label>
-      <textarea id="comment" value={comment} onChange={(ev) => setComment(ev.target.value)} />
+      <textarea
+        id="comment"
+        value={comment}
+        placeholder="Leave comment here..."
+        name="comment"
+        rows="5"
+        onChange={(ev) => setComment(ev.target.value)}
+        required
+      />
 
-      <input type="submit" value="Post Comment" onClick={(ev) => setReferenceId(reviewId)} />
+      <input
+        type="submit"
+        value="Post Comment"
+        onClick={(ev) => setReferenceId(reviewId)}
+      />
     </form>
-  )
-}
+  );
+};
 
 export default CommentForm;

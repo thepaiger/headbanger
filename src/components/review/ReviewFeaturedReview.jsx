@@ -6,7 +6,9 @@ const ReviewFeaturedReview = ({ albumPicture, reviewText }) => {
       </div>
       <div className="review-text-div">
         {reviewText.split("\n").map((textLine) => (
-          <p className="review-text">{textLine}</p>
+          <p className="review-text" key={textLine}>
+            {textLine}
+          </p>
         ))}
       </div>
     </div>
