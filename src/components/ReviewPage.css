@@ -1,0 +1,19 @@
+.card {
+  box-shadow: 2px 2px 10px #323031;
+}
+
+.home-page-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70vw;
+  margin: 0 auto;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.video {
+}

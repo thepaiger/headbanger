@@ -9,6 +9,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 
+import "./ReviewPage.css";
+
 const API_URL = "https://api.airtable.com/v0/appa27lZe3kGcUjPk";
 const API_KEY = `/?api_key=${process.env.REACT_APP_API_KEY}`;
 const REVIEW_TABLE = "/reviews";
@@ -125,7 +127,7 @@ const ReviewPage = () => {
   };
 
   return (
-    <div>
+    <div className="review-page-div">
       <ReviewHeader bandName={bandName} albumName={albumName} />
 
       <ReviewVideo musicVideo={musicVideo} />
@@ -136,7 +138,11 @@ const ReviewPage = () => {
       />
 
       {additionalReviewsArr.map((additionalReview) => (
-        <Link to={`/review/${additionalReview.id}`} onClick={handleReload}>
+        <Link
+          className="link"
+          to={`/review/${additionalReview.id}`}
+          onClick={handleReload}
+        >
           <ReviewAdditionalReview
             key={additionalReview.id}
             additionalReview={additionalReview}

@@ -2,7 +2,9 @@ const ReviewFeaturedReview = ({ albumPicture, reviewText }) => {
   return (
     <div>
       <img src={albumPicture} alt="album artwork" />
-      <p>{reviewText}</p>
+      {reviewText.split("\n").map((textLine) => (
+        <p>{textLine}</p>
+      ))}
     </div>
   );
 };
