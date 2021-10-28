@@ -9,10 +9,11 @@
   align-items: center;
   width: 70vw;
   margin: 0 auto;
+  margin-top: 10vh;
 }
 
-.home-header-div {
-  height: 15vh;
+/* .home-header-div {
+  height: auto;
   width: 70vw;
   box-sizing: border-box;
   background-color: #323031;
@@ -24,7 +25,13 @@
   font-size: min(5vh, 5vw);
   text-align: center;
   border-radius: 7px;
-}
+} */
+
+/* .home-header-div img {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+} */
 
 .link {
   text-decoration: none;
@@ -100,6 +107,15 @@
 
 /* ==================ADDITIONAL REVIEWS================== */
 
+.home-additional-reviews-div {
+  width: 70vw;
+  height: auto;
+  margin: 5vh 0;
+  border-radius: 7px;
+  padding: 5px;
+  background-color: #323031;
+}
+
 .home-additional-review-div {
   display: flex;
   flex-direction: row;
@@ -107,10 +123,15 @@
   /* justify-content: ; */
   /* align-items: center; */
   color: white;
-  background-color: #323031;
-  border-radius: 7px;
-  margin: 5vh 0;
+  /* background-color: #323031; */
+  /* border-radius: 7px; */
+  /* margin: 5vh 0; */
+  border-bottom: solid white 1px;
 }
+
+/* .home-additional-review-div:last-of-type {
+  border-bottom: none;
+} */
 
 .home-additional-review-div .album-title-div {
   display: flex;

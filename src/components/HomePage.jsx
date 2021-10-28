@@ -1,4 +1,4 @@
-import HomeHeader from "./home/HomeHeader.jsx";
+// import HomeHeader from "./home/HomeHeader.jsx";
 import HomeFeaturedReview from "./home/HomeFeaturedReview";
 import HomeAdditionalReview from "./home/HomeAdditionalReview";
 
@@ -23,7 +23,7 @@ const HomePage = () => {
 
   return (
     <div className="home-page-div">
-      <HomeHeader />
+      {/* <HomeHeader /> */}
 
       {reviews.slice(0, 2).map((review) => (
         <Link className="link" to={`/review/${review.id}`}>
@@ -31,11 +31,13 @@ const HomePage = () => {
         </Link>
       ))}
 
-      {reviews.slice(2).map((review) => (
-        <Link className="link" to={`/review/${review.id}`}>
-          <HomeAdditionalReview key={review.id} reviewData={review} />
-        </Link>
-      ))}
+      <div className="home-additional-reviews-div">
+        {reviews.slice(2).map((review) => (
+          <Link className="link" to={`/review/${review.id}`}>
+            <HomeAdditionalReview key={review.id} reviewData={review} />
+          </Link>
+        ))}
+      </div>
     </div>
   );
 };

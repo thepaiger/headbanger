@@ -84,6 +84,8 @@ For .react-player sizing: https://www.youtube.com/watch?v=Rq5SEhs9lws
   background-color: #323031;
   border-radius: 7px;
   padding: 15px;
+  width: 70vw;
+  height: auto;
 }
 
 /* ==================ALBUM ARTWORK================== */

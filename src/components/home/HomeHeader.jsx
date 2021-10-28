@@ -1,9 +1,11 @@
-const HomeHeader = () => {
-  return (
-    <div className="home-header-div card">
-      <h5>Welcome to HEADBANGER - your home for punk and metal reviews</h5>
-    </div>
-  );
-};
+// import headerImg from "./not_your_little_sisters.jpeg";
 
-export default HomeHeader;
+// const HomeHeader = () => {
+//   return (
+//     <div className="home-header-div card">
+//       {/* <img src={headerImg} alt="we are not your little sisters flag" /> */}
+//     </div>
+//   );
+// };
+
+// export default HomeHeader;
