@@ -45,8 +45,6 @@ const ReviewPage = () => {
       setComments(resp.data.records);
     };
     getComments();
-
-    console.log("in useEffect");
   }, [toggleFetch, id]);
 
   let additionalReviewsArr = [];
@@ -68,6 +66,8 @@ const ReviewPage = () => {
           bandName: "loading",
           albumName: "loading",
           reviewText: "loading",
+          reviewAuthor: "loading",
+          reviewSource: "loading",
           albumPicture: "loading",
           musicVideo: "loading",
         },
@@ -103,6 +103,8 @@ const ReviewPage = () => {
   let bandName = "";
   let albumPicture = "";
   let reviewText = "";
+  let reviewAuthor = "";
+  let reviewSource = "";
   let musicVideo = "";
 
   review.length === 0
@@ -118,6 +120,12 @@ const ReviewPage = () => {
     ? (reviewText = "loading")
     : (reviewText = review.fields.reviewText);
   review.length === 0
+    ? (reviewAuthor = "loading")
+    : (reviewAuthor = review.fields.reviewAuthor);
+  review.length === 0
+    ? (reviewSource = "loading")
+    : (reviewSource = review.fields.reviewSource);
+  review.length === 0
     ? (musicVideo = "loading")
     : (musicVideo = review.fields.musicVideo);
 
@@ -132,7 +140,12 @@ const ReviewPage = () => {
       <ReviewVideo musicVideo={musicVideo} />
 
       <div className="card-background">
-        <ReviewHeader bandName={bandName} albumName={albumName} />
+        <ReviewHeader
+          bandName={bandName}
+          albumName={albumName}
+          reviewAuthor={reviewAuthor}
+          reviewSource={reviewSource}
+        />
 
         <ReviewFeaturedReview
           albumPicture={albumPicture}
@@ -140,14 +153,14 @@ const ReviewPage = () => {
         />
       </div>
 
-      <CommentForm
-        COMMENTS_API_URL={COMMENTS_API_URL}
-        toggleFetch={toggleFetch}
-        setToggleFetch={setToggleFetch}
-        reviewId={id.id}
-      />
-
       <div className="card-background">
+        <CommentForm
+          COMMENTS_API_URL={COMMENTS_API_URL}
+          toggleFetch={toggleFetch}
+          setToggleFetch={setToggleFetch}
+          reviewId={id.id}
+        />
+
         <div className="comments-div">
           {reviewComments.map((comment) => (
             <ReviewComments key={comment.id} comment={comment} />
@@ -156,7 +169,7 @@ const ReviewPage = () => {
       </div>
 
       <div className="card-background">
-        <div className="review-additional-reviews-div card">
+        <div className="review-additional-reviews-div">
           {additionalReviewsArr.map((additionalReview) => (
             <Link
               className="link"

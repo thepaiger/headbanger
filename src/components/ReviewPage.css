@@ -9,9 +9,13 @@ For .react-player sizing: https://www.youtube.com/watch?v=Rq5SEhs9lws
 
 .card-background {
   background-color: rgba(255, 255, 255, 0.666);
-  padding: 13px;
+  /* padding: 8px; */
   margin: 5vh 0 0 0;
   border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 70vw;
 }
 
 .review-page-div {
@@ -36,9 +40,11 @@ For .react-player sizing: https://www.youtube.com/watch?v=Rq5SEhs9lws
   align-items: center;
   box-sizing: border-box;
   background-color: #323031;
-  width: 70vw;
+  /* width: 70vw; */
   height: auto;
   /* margin: 5vh 0 0 0; */
+  margin: 13px;
+
   border-radius: 7px;
 }
 
@@ -52,7 +58,20 @@ For .react-player sizing: https://www.youtube.com/watch?v=Rq5SEhs9lws
   font-size: 25px;
   font-weight: 600;
   font-style: italic;
-  margin: 0 0 5vh 0;
+  margin: 0 0 2vh 0;
+}
+
+.review-header-div .review-author {
+  margin: 0 0 1vh 0;
+}
+
+.review-header-div .review-source {
+  margin: 0 0 3vh 0;
+}
+
+.review-header-div .review-source a {
+  text-decoration: none;
+  color: white;
 }
 
 /* ==================VIDEO================== */
@@ -60,9 +79,10 @@ For .react-player sizing: https://www.youtube.com/watch?v=Rq5SEhs9lws
 .video-div {
   position: relative;
   padding-top: 56.25%;
-  width: 70vw;
+  /* width: 70vw; */
   height: auto;
   /* margin: 5vh 0 0 0; */
+  margin: 13px;
 }
 
 .react-player {
@@ -94,7 +114,9 @@ For .react-player sizing: https://www.youtube.com/watch?v=Rq5SEhs9lws
   background-color: #323031;
   border-radius: 7px;
   padding: 15px;
-  width: 70vw;
+  margin: 13px;
+
+  /* width: 70vw; */
   height: auto;
 }
 
@@ -126,8 +148,8 @@ For .react-player sizing: https://www.youtube.com/watch?v=Rq5SEhs9lws
   height: auto;
   /* margin: 5vh 0; */
   border-radius: 7px;
-  padding: 5px;
-  background-color: #323031;
+  /* padding: 5px; */
+  /* background-color: #323031; */
 }
 
 .review-additional-review-div {
@@ -135,11 +157,18 @@ For .react-player sizing: https://www.youtube.com/watch?v=Rq5SEhs9lws
   flex-direction: row;
   flex-wrap: wrap;
   color: white;
-  border-bottom: solid white 1px;
+  height: auto;
+  margin: 13px;
+  background-color: #323031;
+  border-radius: 7px;
+  /* border-bottom: solid white 1px; */
 }
 
-/* .home-additional-review-div:last-of-type {
-  border-bottom: none;
+/* a div:last-of-type {
+  margin-bottom: none;
+} */
+/* .review-additional-review-div:last-of-type {
+  margin-bottom: none;
 } */
 
 .review-additional-review-div .album-title-div {
@@ -198,7 +227,9 @@ For .react-player sizing: https://www.youtube.com/watch?v=Rq5SEhs9lws
   background-color: #323031;
   /* margin: 5vh 0 0 0; */
   padding: 10px;
-  width: 70vw;
+  margin: 13px;
+
+  /* width: 70vw; */
   height: auto;
 }
 
@@ -238,7 +269,6 @@ For .react-player sizing: https://www.youtube.com/watch?v=Rq5SEhs9lws
 /* ==================COMMENTS FORM================== */
 
 .comments-div {
-  background-color: #323031;
   width: 70vw;
   height: auto;
   /* margin: 5vh 0 0 0; */
@@ -246,5 +276,17 @@ For .react-player sizing: https://www.youtube.com/watch?v=Rq5SEhs9lws
 }
 
 .comment-div {
-  margin: 5px;
+  margin: 13px;
+  background-color: #323031;
+  padding: 15px;
+  border-radius: 7px;
+}
+
+.comment-username {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.comment-text {
+  margin: 10px 0 0 0;
 }

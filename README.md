@@ -102,27 +102,27 @@
 | Component                                    | Priority | Estimated Time | Time Invested |
 | -------------------------------------------- | :------: | :------------: | :-----------: |
 | Proposal                                     |    H     |     3 HRS      |    4.5 HRS    |
-| Airtable setup                               |    H     |     .5 HR      |    .5 HRS     |
+| Airtable setup                               |    H     |     .5 HRS     |    .5 HRS     |
 | Connect Airtable data                        |    H     |     3 HRS      |    4.5 HRS    |
 | Airtable data population                     |    H     |     2 HRS      |               |
 | Create component structure (high-level)      |    H     |      1 HR      |     2 HRS     |
-| Navbar component population                  |    H     |     .5 HR      |               |
-| Header/About component population            |    H     |     .5 HR      |               |
-| Create review components - home page large   |    H     |     6 HRS      |     3 HRS     |
+| Navbar component population                  |    H     |     .5 HRS     |               |
+| Header/About component population            |    H     |     .5 HRS     |               |
+| Create review components                     |    H     |     6 HRS      |     3 HRS     |
 | Link Airtable to review components           |    H     |     2 HRS      |     3 HRS     |
 | Populate data in review components           |    H     |     3 HRS      |     3 HRS     |
-| Create band name header                      |    H     |     .5 HR      |               |
-| Populate band name header w/ Airtable data   |    H     |      1 HR      |               |
+| Create band name header                      |    H     |     .5 HRS     |    .5 HRS     |
+| Populate band name header w/ Airtable data   |    H     |      1 HR      |    .5 HRS     |
 | Create video component                       |    L     |      1 HR      |    .5 HRS     |
 | Link video embed                             |    L     |      1 HR      |     1 HR      |
-| Create comments component                    |    H     |     2 HRS      |    .5 HRS     |
+| Create comments component                    |    H     |     2 HRS      |     1 HR      |
 | Link comments to Airtable - GET & POST       |    H     |     2 HRS      |    2.5 HR     |
 | CSS - review component - home page large     |    H     |     2 HRS      |    3.5 HRS    |
 | CSS - review component - home page small     |    H     |     2 HRS      |     1 HR      |
 | CSS - review component - separate page       |    H     |     2 HRS      |     2 HRS     |
-| CSS - review component - separate page add'l |    H     |     2 HRS      |    1.5 HRS    |
+| CSS - review component - separate page add'l |    H     |     2 HRS      |     2 HRS     |
 | CSS - headers/nav                            |    H     |      1 HR      |     1 HR      |
-| CSS - comment section                        |    H     |     2 HRS      |     1 HR      |
+| CSS - comment section                        |    H     |     2 HRS      |     2 HRS     |
 | CSS - flexbox                                |    H     |     3 HRS      |     3 HRS     |
 | CSS - misc                                   |    L     |     3 HRS      |               |
 | Total                                        |    H     |     46 HRS     |               |

@@ -34,46 +34,44 @@ const CommentForm = ({
   };
 
   return (
-    <div className="card-background">
-      <form className="commentForm card" onSubmit={handlePostRequest}>
-        <h3 className="formHeader">Leave a comment:</h3>
+    <form className="commentForm card" onSubmit={handlePostRequest}>
+      <h3 className="formHeader">Leave a comment:</h3>
 
-        <label className="usernameLabel" htmlFor="username">
-          Username
-        </label>
-        <input
-          className="usernameInput"
-          id="username"
-          type="text"
-          value={username}
-          placeholder="Enter a username"
-          name="username"
-          onChange={(ev) => setUsername(ev.target.value)}
-          required
-        />
+      <label className="usernameLabel" htmlFor="username">
+        Username
+      </label>
+      <input
+        className="usernameInput"
+        id="username"
+        type="text"
+        value={username}
+        placeholder="Enter a username"
+        name="username"
+        onChange={(ev) => setUsername(ev.target.value)}
+        required
+      />
 
-        <label className="commentLabel" htmlFor="comment">
-          Comment
-        </label>
-        <textarea
-          className="commentInput"
-          id="comment"
-          value={comment}
-          placeholder="Leave comment here..."
-          name="comment"
-          rows="5"
-          onChange={(ev) => setComment(ev.target.value)}
-          required
-        />
+      <label className="commentLabel" htmlFor="comment">
+        Comment
+      </label>
+      <textarea
+        className="commentInput"
+        id="comment"
+        value={comment}
+        placeholder="Leave comment here..."
+        name="comment"
+        rows="5"
+        onChange={(ev) => setComment(ev.target.value)}
+        required
+      />
 
-        <input
-          className="commentSubmit"
-          type="submit"
-          value="Post Comment"
-          onClick={(ev) => setReferenceId(reviewId)}
-        />
-      </form>
-    </div>
+      <input
+        className="commentSubmit"
+        type="submit"
+        value="Post Comment"
+        onClick={(ev) => setReferenceId(reviewId)}
+      />
+    </form>
   );
 };
 
