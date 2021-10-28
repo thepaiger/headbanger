@@ -2,16 +2,15 @@
 
 ## Description
 
-- HEADBANGER is a punk/metal music review site. The main page features summaries of recent reviews of various bands in the scene. Navigate to a specific review to read about an album, check out a music video, or leave your own comments.
-  - !!!!!NEED TO FINISH UPDATING DESCRIPTION!!!!!
+- HEADBANGER is a punk/metal music review site. The main page features summaries of reviews of various bands in the scene. Navigate to a specific review to read about an album, check out a music video, or leave your own comments.
 
 ## Wireframes
 
-- https://whimsical.com/headbanger-Py3Qd4SPcURwDwZFaz33WR
+- https://whimsical.com/headbanger-wireframes-Py3Qd4SPcURwDwZFaz33WR
 
 ## Component Hierarchy: A link or screenshot to your whimisical visual tree of your components, depicting the parent/child relationships, as well as an indication of which will be class components, requiring state, and which will be functional components, taking props.
 
-- !!!!!NEED TO ADD COMPONENTS!!!!!
+- https://whimsical.com/headbanger-components-kWaY9gYW7fhKELUqs6b5Z
 
 ## API
 
@@ -92,8 +91,8 @@
 | Oct 21    | Pitch Drafting / Wireframes                         |  Complete  |
 | Oct 22-24 | Pitch Approval / Initial Setup / Get/Post Data Flow |  Complete  |
 | Oct 25    | Component Creation / Populate Airtable              |  Complete  |
-| Oct 26    | Primary CSS Styling / MVP Complete                  | Incomplete |
-| Oct 27    | PostMVP Integration                                 | Incomplete |
+| Oct 26    | Primary CSS Styling / MVP Complete                  |  Complete  |
+| Oct 27    | PostMVP Integration (where time is available)       |  Complete  |
 | Oct 28    | Final CSS Touches                                   | Incomplete |
 | Oct 29    | Presentations                                       | Incomplete |
 
@@ -103,11 +102,10 @@
 | -------------------------------------------- | :------: | :------------: | :-----------: |
 | Proposal                                     |    H     |     3 HRS      |    4.5 HRS    |
 | Airtable setup                               |    H     |     .5 HRS     |    .5 HRS     |
-| Connect Airtable data                        |    H     |     3 HRS      |    4.5 HRS    |
-| Airtable data population                     |    H     |     2 HRS      |               |
+| Connect & populate Airtable data             |    H     |     5 HRS      |    4.5 HRS    |
 | Create component structure (high-level)      |    H     |      1 HR      |     2 HRS     |
-| Navbar component population                  |    H     |     .5 HRS     |               |
-| Header/About component population            |    H     |     .5 HRS     |               |
+| Navbar component population                  |    H     |     .5 HRS     |    .5 HRS     |
+| Header/About component population            |    H     |     .5 HRS     |    .5 HRS     |
 | Create review components                     |    H     |     6 HRS      |     3 HRS     |
 | Link Airtable to review components           |    H     |     2 HRS      |     3 HRS     |
 | Populate data in review components           |    H     |     3 HRS      |     3 HRS     |
@@ -118,14 +116,14 @@
 | Create comments component                    |    H     |     2 HRS      |     1 HR      |
 | Link comments to Airtable - GET & POST       |    H     |     2 HRS      |    2.5 HR     |
 | CSS - review component - home page large     |    H     |     2 HRS      |    3.5 HRS    |
-| CSS - review component - home page small     |    H     |     2 HRS      |     1 HR      |
+| CSS - review component - home page small     |    H     |     2 HRS      |    1.5 HR     |
 | CSS - review component - separate page       |    H     |     2 HRS      |     2 HRS     |
-| CSS - review component - separate page add'l |    H     |     2 HRS      |     2 HRS     |
-| CSS - headers/nav                            |    H     |      1 HR      |     1 HR      |
+| CSS - review component - separate page add'l |    H     |     2 HRS      |    2.5 HRS    |
+| CSS - headers/nav                            |    H     |      1 HR      |    1.5 HRS    |
 | CSS - comment section                        |    H     |     2 HRS      |     2 HRS     |
 | CSS - flexbox                                |    H     |     3 HRS      |     3 HRS     |
 | CSS - misc                                   |    L     |     3 HRS      |               |
-| Total                                        |    H     |     46 HRS     |               |
+| Total                                        |    H     |     46 HRS     |   43.5 HRS    |
 
 ## SWOT Analysis
 

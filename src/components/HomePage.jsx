@@ -1,4 +1,3 @@
-// import HomeHeader from "./home/HomeHeader.jsx";
 import HomeFeaturedReview from "./home/HomeFeaturedReview";
 import HomeAdditionalReview from "./home/HomeAdditionalReview";
 
@@ -23,8 +22,6 @@ const HomePage = () => {
 
   return (
     <div className="home-page-div">
-      {/* <HomeHeader /> */}
-
       {reviews.slice(0, 2).map((review) => (
         <Link className="link" to={`/review/${review.id}`} key={review.id}>
           <HomeFeaturedReview reviewData={review} />

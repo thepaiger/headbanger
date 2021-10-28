@@ -130,7 +130,6 @@ const ReviewPage = () => {
     : (musicVideo = review.fields.musicVideo);
 
   const handleReload = () => {
-    console.log("in handle reload");
     setToggleFetch(!toggleFetch);
     window.scrollTo(0, 0);
   };
