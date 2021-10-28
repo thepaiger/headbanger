@@ -25,6 +25,7 @@ nav {
   box-shadow: 2px 2px 10px #323031;
   position: fixed;
   top: 0;
+  z-index: 1;
 }
 
 .nav-link {

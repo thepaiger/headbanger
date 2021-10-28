@@ -8,7 +8,7 @@
 
 - https://whimsical.com/headbanger-wireframes-Py3Qd4SPcURwDwZFaz33WR
 
-## Component Hierarchy: A link or screenshot to your whimisical visual tree of your components, depicting the parent/child relationships, as well as an indication of which will be class components, requiring state, and which will be functional components, taking props.
+## Component Hierarchy
 
 - https://whimsical.com/headbanger-components-kWaY9gYW7fhKELUqs6b5Z
 
