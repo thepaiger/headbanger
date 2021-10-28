@@ -143,22 +143,24 @@ const ReviewPage = () => {
         reviewText={reviewText}
       />
 
-      {additionalReviewsArr.map((additionalReview) => (
-        <Link
-          className="link"
-          to={`/review/${additionalReview.id}`}
-          onClick={handleReload}
-          key={additionalReview.id}
-        >
-          <ReviewAdditionalReview
+      <div className="review-additional-reviews-div card">
+        {additionalReviewsArr.map((additionalReview) => (
+          <Link
+            className="link"
+            to={`/review/${additionalReview.id}`}
+            onClick={handleReload}
             key={additionalReview.id}
-            additionalReview={additionalReview}
-            toggleFetch={toggleFetch}
-            setToggleFetch={setToggleFetch}
-            id={id}
-          />
-        </Link>
-      ))}
+          >
+            <ReviewAdditionalReview
+              key={additionalReview.id}
+              additionalReview={additionalReview}
+              toggleFetch={toggleFetch}
+              setToggleFetch={setToggleFetch}
+              id={id}
+            />
+          </Link>
+        ))}
+      </div>
 
       <CommentForm
         COMMENTS_API_URL={COMMENTS_API_URL}

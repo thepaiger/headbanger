@@ -31,7 +31,7 @@ const HomePage = () => {
         </Link>
       ))}
 
-      <div className="home-additional-reviews-div">
+      <div className="home-additional-reviews-div card">
         {reviews.slice(2).map((review) => (
           <Link className="link" to={`/review/${review.id}`}>
             <HomeAdditionalReview key={review.id} reviewData={review} />

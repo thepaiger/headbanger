@@ -14,6 +14,7 @@ For .react-player sizing: https://www.youtube.com/watch?v=Rq5SEhs9lws
   align-items: center;
   width: 70vw;
   margin: 0 auto;
+  margin-top: 10vh;
 }
 
 .link {
@@ -31,6 +32,7 @@ For .react-player sizing: https://www.youtube.com/watch?v=Rq5SEhs9lws
   width: 70vw;
   height: auto;
   margin: 5vh 0;
+  border-radius: 7px;
 }
 
 .review-header-div .band-name {
@@ -111,15 +113,29 @@ For .react-player sizing: https://www.youtube.com/watch?v=Rq5SEhs9lws
 
 /* ==================ADDITIONAL REVIEWS================== */
 
+.review-additional-reviews-div {
+  width: 70vw;
+  height: auto;
+  margin: 5vh 0 0 0;
+  border-radius: 7px;
+  padding: 5px;
+  background-color: #323031;
+}
+
 .review-additional-review-div {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   color: white;
-  background-color: #323031;
-  border-radius: 7px;
+  /* background-color: #323031; */
+  /* border-radius: 7px; */
   margin: 5vh 0 0 0;
+  border-bottom: solid white 1px;
 }
+
+/* .home-additional-review-div:last-of-type {
+  border-bottom: none;
+} */
 
 .review-additional-review-div .album-title-div {
   display: flex;
