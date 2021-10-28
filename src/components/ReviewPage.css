@@ -7,6 +7,13 @@ For .react-player sizing: https://www.youtube.com/watch?v=Rq5SEhs9lws
   box-shadow: 2px 2px 10px #323031;
 }
 
+.card-background {
+  background-color: rgba(255, 255, 255, 0.666);
+  padding: 13px;
+  margin: 5vh 0 0 0;
+  border-radius: 7px;
+}
+
 .review-page-div {
   display: flex;
   flex-direction: column;
@@ -31,7 +38,7 @@ For .react-player sizing: https://www.youtube.com/watch?v=Rq5SEhs9lws
   background-color: #323031;
   width: 70vw;
   height: auto;
-  margin: 5vh 0;
+  /* margin: 5vh 0 0 0; */
   border-radius: 7px;
 }
 
@@ -55,6 +62,7 @@ For .react-player sizing: https://www.youtube.com/watch?v=Rq5SEhs9lws
   padding-top: 56.25%;
   width: 70vw;
   height: auto;
+  /* margin: 5vh 0 0 0; */
 }
 
 .react-player {
@@ -81,7 +89,7 @@ For .react-player sizing: https://www.youtube.com/watch?v=Rq5SEhs9lws
 /* ==================FEATURED REVIEW================== */
 
 .review-featured-review-div {
-  margin: 5vh 0 0 0;
+  margin: 2.5vh 0 0 0;
   box-sizing: border-box;
   background-color: #323031;
   border-radius: 7px;
@@ -116,7 +124,7 @@ For .react-player sizing: https://www.youtube.com/watch?v=Rq5SEhs9lws
 .review-additional-reviews-div {
   width: 70vw;
   height: auto;
-  margin: 5vh 0;
+  /* margin: 5vh 0; */
   border-radius: 7px;
   padding: 5px;
   background-color: #323031;
@@ -188,7 +196,7 @@ For .react-player sizing: https://www.youtube.com/watch?v=Rq5SEhs9lws
   /* border: solid white 1px; */
   border-radius: 7px;
   background-color: #323031;
-  margin: 5vh 0 0 0;
+  /* margin: 5vh 0 0 0; */
   padding: 10px;
   width: 70vw;
   height: auto;
@@ -233,7 +241,7 @@ For .react-player sizing: https://www.youtube.com/watch?v=Rq5SEhs9lws
   background-color: #323031;
   width: 70vw;
   height: auto;
-  margin: 5vh 0 0 0;
+  /* margin: 5vh 0 0 0; */
   border-radius: 7px;
 }
 

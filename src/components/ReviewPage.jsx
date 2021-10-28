@@ -25,8 +25,6 @@ const ReviewPage = () => {
 
   const id = useParams();
 
-  console.log(id);
-
   useEffect(() => {
     const getReview = async () => {
       const resp = await axios.get(
@@ -39,7 +37,6 @@ const ReviewPage = () => {
     const getAdditionalReviews = async () => {
       const resp = await axios.get(`${API_URL}${REVIEW_TABLE}${API_KEY}`);
       setAdditionalReviews(resp.data.records);
-      console.log("getting additional reviews");
     };
     getAdditionalReviews();
 
@@ -132,14 +129,16 @@ const ReviewPage = () => {
 
   return (
     <div className="review-page-div">
-      <ReviewHeader bandName={bandName} albumName={albumName} />
-
       <ReviewVideo musicVideo={musicVideo} />
 
-      <ReviewFeaturedReview
-        albumPicture={albumPicture}
-        reviewText={reviewText}
-      />
+      <div className="card-background">
+        <ReviewHeader bandName={bandName} albumName={albumName} />
+
+        <ReviewFeaturedReview
+          albumPicture={albumPicture}
+          reviewText={reviewText}
+        />
+      </div>
 
       <CommentForm
         COMMENTS_API_URL={COMMENTS_API_URL}
@@ -148,29 +147,33 @@ const ReviewPage = () => {
         reviewId={id.id}
       />
 
-      <div className="comments-div">
-        {reviewComments.map((comment) => (
-          <ReviewComments key={comment.id} comment={comment} />
-        ))}
+      <div className="card-background">
+        <div className="comments-div">
+          {reviewComments.map((comment) => (
+            <ReviewComments key={comment.id} comment={comment} />
+          ))}
+        </div>
       </div>
 
-      <div className="review-additional-reviews-div card">
-        {additionalReviewsArr.map((additionalReview) => (
-          <Link
-            className="link"
-            to={`/review/${additionalReview.id}`}
-            onClick={handleReload}
-            key={additionalReview.id}
-          >
-            <ReviewAdditionalReview
+      <div className="card-background">
+        <div className="review-additional-reviews-div card">
+          {additionalReviewsArr.map((additionalReview) => (
+            <Link
+              className="link"
+              to={`/review/${additionalReview.id}`}
+              onClick={handleReload}
               key={additionalReview.id}
-              additionalReview={additionalReview}
-              toggleFetch={toggleFetch}
-              setToggleFetch={setToggleFetch}
-              id={id}
-            />
-          </Link>
-        ))}
+            >
+              <ReviewAdditionalReview
+                key={additionalReview.id}
+                additionalReview={additionalReview}
+                toggleFetch={toggleFetch}
+                setToggleFetch={setToggleFetch}
+                id={id}
+              />
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );
