@@ -6,7 +6,7 @@ import ReviewAdditionalReview from "./review/ReviewAdditionalReview";
 import CommentForm from "./review/CommentForm";
 
 import axios from "axios";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 
 import "./ReviewPage.css";
@@ -22,29 +22,24 @@ const ReviewPage = () => {
   const [additionalReviews, setAdditionalReviews] = useState([]);
   const [comments, setComments] = useState([]);
   const [toggleFetch, setToggleFetch] = useState(true);
-  const hasFetchedReview = useRef(false);
-
-  const toggleFetchedRef = () => {
-    hasFetchedReview.current = !hasFetchedReview.current;
-  };
 
   const id = useParams();
 
+  console.log(id);
+
   useEffect(() => {
-    if (!hasFetchedReview.current) {
-      const getReview = async () => {
-        const resp = await axios.get(
-          `${API_URL}${REVIEW_TABLE}/${id.id}${API_KEY}`
-        );
-        setReview(resp.data);
-        toggleFetchedRef();
-      };
-      getReview();
-    }
+    const getReview = async () => {
+      const resp = await axios.get(
+        `${API_URL}${REVIEW_TABLE}/${id.id}${API_KEY}`
+      );
+      setReview(resp.data);
+    };
+    getReview();
 
     const getAdditionalReviews = async () => {
       const resp = await axios.get(`${API_URL}${REVIEW_TABLE}${API_KEY}`);
       setAdditionalReviews(resp.data.records);
+      console.log("getting additional reviews");
     };
     getAdditionalReviews();
 
@@ -53,7 +48,9 @@ const ReviewPage = () => {
       setComments(resp.data.records);
     };
     getComments();
-  }, [toggleFetch]);
+
+    console.log("in useEffect");
+  }, [toggleFetch, id]);
 
   let additionalReviewsArr = [];
   if (additionalReviews.length !== 0) {
@@ -128,6 +125,7 @@ const ReviewPage = () => {
     : (musicVideo = review.fields.musicVideo);
 
   const handleReload = () => {
+    console.log("in handle reload");
     setToggleFetch(!toggleFetch);
     window.scrollTo(0, 0);
   };

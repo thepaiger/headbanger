@@ -26,15 +26,15 @@ const HomePage = () => {
       {/* <HomeHeader /> */}
 
       {reviews.slice(0, 2).map((review) => (
-        <Link className="link" to={`/review/${review.id}`}>
-          <HomeFeaturedReview key={review.id} reviewData={review} />
+        <Link className="link" to={`/review/${review.id}`} key={review.id}>
+          <HomeFeaturedReview reviewData={review} />
         </Link>
       ))}
 
       <div className="home-additional-reviews-div card">
         {reviews.slice(2).map((review) => (
-          <Link className="link" to={`/review/${review.id}`}>
-            <HomeAdditionalReview key={review.id} reviewData={review} />
+          <Link className="link" to={`/review/${review.id}`} key={review.id}>
+            <HomeAdditionalReview reviewData={review} />
           </Link>
         ))}
       </div>
