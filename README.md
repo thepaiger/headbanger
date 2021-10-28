@@ -118,11 +118,11 @@
 | Create comments component                    |    H     |     2 HRS      |    .5 HRS     |
 | Link comments to Airtable - GET & POST       |    H     |     2 HRS      |    2.5 HR     |
 | CSS - review component - home page large     |    H     |     2 HRS      |    3.5 HRS    |
-| CSS - review component - home page small     |    H     |     2 HRS      |    .5 HRS     |
+| CSS - review component - home page small     |    H     |     2 HRS      |     1 HR      |
 | CSS - review component - separate page       |    H     |     2 HRS      |     2 HRS     |
-| CSS - review component - separate page add'l |    H     |     2 HRS      |               |
+| CSS - review component - separate page add'l |    H     |     2 HRS      |    1.5 HRS    |
 | CSS - headers/nav                            |    H     |      1 HR      |     1 HR      |
-| CSS - comment section                        |    H     |     2 HRS      |               |
+| CSS - comment section                        |    H     |     2 HRS      |     1 HR      |
 | CSS - flexbox                                |    H     |     3 HRS      |     3 HRS     |
 | CSS - misc                                   |    L     |     3 HRS      |               |
 | Total                                        |    H     |     46 HRS     |               |

@@ -143,6 +143,19 @@ const ReviewPage = () => {
         reviewText={reviewText}
       />
 
+      <CommentForm
+        COMMENTS_API_URL={COMMENTS_API_URL}
+        toggleFetch={toggleFetch}
+        setToggleFetch={setToggleFetch}
+        reviewId={id.id}
+      />
+
+      <div className="comments-div">
+        {reviewComments.map((comment) => (
+          <ReviewComments key={comment.id} comment={comment} />
+        ))}
+      </div>
+
       <div className="review-additional-reviews-div card">
         {additionalReviewsArr.map((additionalReview) => (
           <Link
@@ -161,17 +174,6 @@ const ReviewPage = () => {
           </Link>
         ))}
       </div>
-
-      <CommentForm
-        COMMENTS_API_URL={COMMENTS_API_URL}
-        toggleFetch={toggleFetch}
-        setToggleFetch={setToggleFetch}
-        reviewId={id.id}
-      />
-
-      {reviewComments.map((comment) => (
-        <ReviewComments key={comment.id} comment={comment} />
-      ))}
     </div>
   );
 };

@@ -116,7 +116,7 @@ For .react-player sizing: https://www.youtube.com/watch?v=Rq5SEhs9lws
 .review-additional-reviews-div {
   width: 70vw;
   height: auto;
-  margin: 5vh 0 0 0;
+  margin: 5vh 0;
   border-radius: 7px;
   padding: 5px;
   background-color: #323031;
@@ -127,9 +127,6 @@ For .react-player sizing: https://www.youtube.com/watch?v=Rq5SEhs9lws
   flex-direction: row;
   flex-wrap: wrap;
   color: white;
-  /* background-color: #323031; */
-  /* border-radius: 7px; */
-  margin: 5vh 0 0 0;
   border-bottom: solid white 1px;
 }
 
@@ -161,6 +158,7 @@ For .react-player sizing: https://www.youtube.com/watch?v=Rq5SEhs9lws
   flex-direction: column;
   justify-content: center;
   padding: 5px 0 0 10px;
+  /* padding-left: 10px; */
 }
 
 .review-additional-review-div .band-name {
@@ -227,4 +225,18 @@ For .react-player sizing: https://www.youtube.com/watch?v=Rq5SEhs9lws
   font-weight: 600;
   background-color: #000;
   color: white;
+}
+
+/* ==================COMMENTS FORM================== */
+
+.comments-div {
+  background-color: #323031;
+  width: 70vw;
+  height: auto;
+  margin: 5vh 0 0 0;
+  border-radius: 7px;
+}
+
+.comment-div {
+  margin: 5px;
 }
