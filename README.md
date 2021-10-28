@@ -93,7 +93,7 @@
 | Oct 25    | Component Creation / Populate Airtable              |  Complete  |
 | Oct 26    | Primary CSS Styling / MVP Complete                  |  Complete  |
 | Oct 27    | PostMVP Integration (where time is available)       |  Complete  |
-| Oct 28    | Final CSS Touches                                   | Incomplete |
+| Oct 28    | Final CSS Touches                                   |  Complete  |
 | Oct 29    | Presentations                                       | Incomplete |
 
 ## Timeframes
@@ -122,8 +122,8 @@
 | CSS - headers/nav                            |    H     |      1 HR      |    1.5 HRS    |
 | CSS - comment section                        |    H     |     2 HRS      |     2 HRS     |
 | CSS - flexbox                                |    H     |     3 HRS      |     3 HRS     |
-| CSS - misc                                   |    L     |     3 HRS      |               |
-| Total                                        |    H     |     46 HRS     |   43.5 HRS    |
+| CSS - misc                                   |    L     |     3 HRS      |     2 HRS     |
+| Total                                        |    H     |     46 HRS     |   45.5 HRS    |
 
 ## SWOT Analysis
 
