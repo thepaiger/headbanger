@@ -1,9 +1,9 @@
-import ReviewHeader from "./review/ReviewHeader";
-import ReviewVideo from "./review/ReviewVideo";
-import ReviewFeaturedReview from "./review/ReviewFeaturedReview";
-import ReviewComments from "./review/ReviewComments";
-import ReviewAdditionalReview from "./review/ReviewAdditionalReview";
-import CommentForm from "./review/CommentForm";
+import ReviewHeader from "./review-components/ReviewHeader";
+import ReviewVideo from "./review-components/ReviewVideo";
+import ReviewFeaturedReview from "./review-components/ReviewFeaturedReview";
+import ReviewComments from "./review-components/ReviewComments";
+import ReviewAdditionalReview from "./review-components/ReviewAdditionalReview";
+import CommentForm from "./review-components/CommentForm";
 
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -26,6 +26,7 @@ const ReviewPage = () => {
   const id = useParams();
 
   useEffect(() => {
+    // get 'featured' review
     const getReview = async () => {
       const resp = await axios.get(
         `${API_URL}${REVIEW_TABLE}/${id.id}${API_KEY}`
@@ -34,12 +35,14 @@ const ReviewPage = () => {
     };
     getReview();
 
+    // get additional reviews
     const getAdditionalReviews = async () => {
       const resp = await axios.get(`${API_URL}${REVIEW_TABLE}${API_KEY}`);
       setAdditionalReviews(resp.data.records);
     };
     getAdditionalReviews();
 
+    // get comments
     const getComments = async () => {
       const resp = await axios.get(COMMENTS_API_URL);
       setComments(resp.data.records);
@@ -47,6 +50,7 @@ const ReviewPage = () => {
     getComments();
   }, [toggleFetch, id]);
 
+  // skip first review for 'featured'; move the rest into 'additional'
   let additionalReviewsArr = [];
   if (additionalReviews.length !== 0) {
     let j = 0;
@@ -76,6 +80,7 @@ const ReviewPage = () => {
     ];
   }
 
+  // only get comments for corresponding review
   let reviewComments = [];
   if (comments.length !== 0) {
     let j = 0;
@@ -99,36 +104,43 @@ const ReviewPage = () => {
     ];
   }
 
+  // populate review fields
   let albumName = "";
-  let bandName = "";
-  let albumPicture = "";
-  let reviewText = "";
-  let reviewAuthor = "";
-  let reviewSource = "";
-  let musicVideo = "";
-
   review.length === 0
     ? (albumName = "loading")
     : (albumName = review.fields.albumName);
+
+  let bandName = "";
   review.length === 0
     ? (bandName = "loading")
     : (bandName = review.fields.bandName);
+
+  let albumPicture = "";
   review.length === 0
     ? (albumPicture = "loading")
     : (albumPicture = review.fields.albumPicture);
+
+  let reviewText = "";
   review.length === 0
     ? (reviewText = "loading")
     : (reviewText = review.fields.reviewText);
+
+  let reviewAuthor = "";
   review.length === 0
     ? (reviewAuthor = "loading")
     : (reviewAuthor = review.fields.reviewAuthor);
+
+  let reviewSource = "";
   review.length === 0
     ? (reviewSource = "loading")
     : (reviewSource = review.fields.reviewSource);
+
+  let musicVideo = "";
   review.length === 0
     ? (musicVideo = "loading")
     : (musicVideo = review.fields.musicVideo);
 
+  // reload due to fetch not trigger automatically when switching to a different review
   const handleReload = () => {
     setToggleFetch(!toggleFetch);
     window.scrollTo(0, 0);
@@ -162,7 +174,10 @@ const ReviewPage = () => {
 
         <div className="comments-div">
           {reviewComments.map((comment) => (
-            <ReviewComments key={comment.id} comment={comment} />
+            <ReviewComments
+              key={comment.id}
+              comment={comment}
+            />
           ))}
         </div>
       </div>

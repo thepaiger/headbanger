@@ -1,12 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 
-const CommentForm = ({
-  COMMENTS_API_URL,
-  toggleFetch,
-  setToggleFetch,
-  reviewId,
-}) => {
+const CommentForm = ({ COMMENTS_API_URL, toggleFetch, setToggleFetch, reviewId }) => {
   const [username, setUsername] = useState("");
   const [comment, setComment] = useState("");
   const [referenceId, setReferenceId] = useState("");

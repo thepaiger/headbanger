@@ -1,6 +1,6 @@
 import Nav from "./components/Nav.jsx";
-import HomePage from "./components/HomePage.jsx";
-import ReviewPage from "./components/ReviewPage.jsx";
+import HomePage from "./components/home/HomePage";
+import ReviewPage from "./components/review/ReviewPage.jsx";
 
 import { Route } from "react-router-dom";
 

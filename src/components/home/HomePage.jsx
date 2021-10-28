@@ -1,5 +1,5 @@
-import HomeFeaturedReview from "./home/HomeFeaturedReview";
-import HomeAdditionalReview from "./home/HomeAdditionalReview";
+import HomeFeaturedReview from "./home-components/HomeFeaturedReview";
+import HomeAdditionalReview from "./home-components/HomeAdditionalReview";
 
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -22,6 +22,7 @@ const HomePage = () => {
 
   return (
     <div className="home-page-div">
+      {/* slicing then mapping to grab first two reviews for the 'featured' section */}
       {reviews.slice(0, 2).map((review) => (
         <Link className="link" to={`/review/${review.id}`} key={review.id}>
           <HomeFeaturedReview reviewData={review} />
@@ -30,6 +31,7 @@ const HomePage = () => {
 
       <div className="card-background">
         <div className="home-additional-reviews-div card">
+          {/* slicing then mapping to grab all reviews AFTER the first two for the 'additional' section */}
           {reviews.slice(2).map((review) => (
             <Link className="link" to={`/review/${review.id}`} key={review.id}>
               <HomeAdditionalReview reviewData={review} />
