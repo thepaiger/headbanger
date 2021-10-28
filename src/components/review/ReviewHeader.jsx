@@ -5,7 +5,7 @@ const ReviewHeader = ({ bandName, albumName, reviewAuthor, reviewSource }) => {
       <h4 className="album-name">{albumName}</h4>
       <p className="review-author">Author: {reviewAuthor}</p>
       <p className="review-source">
-        <a href={reviewSource}>Click here for original review</a>
+        <a href={reviewSource}>[Click here for original review]</a>
       </p>
     </div>
   );

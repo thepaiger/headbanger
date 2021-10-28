@@ -73,6 +73,11 @@ For .react-player sizing: https://www.youtube.com/watch?v=Rq5SEhs9lws
   color: white;
 }
 
+.review-header-div .review-source a:hover {
+  color: #c1bdb3;
+  text-decoration: underline;
+}
+
 /* ==================VIDEO================== */
 
 .video-div {
@@ -262,6 +267,12 @@ For .react-player sizing: https://www.youtube.com/watch?v=Rq5SEhs9lws
   font-weight: 600;
   background-color: #000;
   color: white;
+  border-radius: 4px;
+}
+
+.commentSubmit:hover {
+  background-color: #5e5959;
+  font-weight: 600;
 }
 
 /* ==================COMMENTS FORM================== */
