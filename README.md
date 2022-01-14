@@ -98,7 +98,7 @@
 | Oct 26    | Primary CSS Styling / MVP Complete                  |  Complete  |
 | Oct 27    | PostMVP Integration (where time is available)       |  Complete  |
 | Oct 28    | Final CSS Touches                                   |  Complete  |
-| Oct 29    | Presentations                                       | Incomplete |
+| Oct 29    | Presentations                                       |  Complete  |
 
 ## Timeframes
 
